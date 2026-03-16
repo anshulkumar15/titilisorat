@@ -1,0 +1,241 @@
+<div class="container">
+    <h2>Poker Revenue</h2>
+    <span class="remainLoan"></span>
+    <!--row-->
+    <div class="row">
+        <div>
+
+
+            <form action="/Reports.mvc/Revenue" method="post">
+                <table style="width:100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="row-left">
+                                    <label for="strFromDate">From Date : </label>
+                                    <span class="DatePicker_Icon_Wrapper"
+                                    style="display: inline-block; position: relative; float: none; inset: auto;">
+                                   <input type="date">
+                                </span>
+                             </div>
+                                <div class="row-mid">
+                                    <label for="strToDate">To Date : </label>
+                                    <span class="DatePicker_Icon_Wrapper"
+                                    style="display: inline-block; position: relative; float: none; inset: auto;">
+                                   <input type="date">
+                                </span>
+                               </div>
+                                <div class="row-right">
+                                    <input type="button" name="btnSearch" id="btnSearch" value="Search">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="grid" id="dvRevenue">
+                                    <table style="width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th datatype="int" colname="SRNO" sortorder="desc"
+                                                    style="cursor:pointer;">Sr. No.</th>
+                                                <th datatype="" colname="F_DATE" sortorder="asc"
+                                                    style="cursor:pointer;">From Date</th>
+                                                <th datatype="" colname="T_DATE" sortorder="asc"
+                                                    style="cursor:pointer;">To Date</th>
+                                                <th datatype="" colname="NEWPROFIT" sortorder="asc"
+                                                    style="cursor:pointer;">Profit</th>
+                                                <th datatype="" colname="ACTUAL_POINTS" sortorder="asc"
+                                                    style="cursor:pointer;">Actual Rev</th>
+                                                <th datatype="" colname="REVENUE_DEDUCTED" sortorder="asc"
+                                                    style="cursor:pointer;">Rev Ded</th>
+                                                <th datatype="" colname="DEDN_PERCENTAGE" sortorder="asc"
+                                                    style="cursor:pointer;">Ded %</th>
+                                                <th datatype="" colname="POINT_TRANSFER" sortorder="asc"
+                                                    style="cursor:pointer;">Rev After Loan</th>
+                                                <th datatype="" colname="REVENUE" sortorder="asc"
+                                                    style="cursor:pointer;">Revnue %</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td align="center">1</td>
+                                                <td align="center">09-NOV-2020</td>
+                                                <td align="center">15-NOV-2020</td>
+                                                <td align="center" style="color: red; cursor: pointer;">-13507</td>
+                                                <td align="center">540.28</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">540.28</td>
+                                                <td align="center" style="color:red">-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">2</td>
+                                                <td align="center">16-NOV-2020</td>
+                                                <td align="center">22-NOV-2020</td>
+                                                <td align="center" style="color: red; cursor: pointer;">-102529</td>
+                                                <td align="center">4101.16</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">4101.16</td>
+                                                <td align="center" style="color:red">-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">3</td>
+                                                <td align="center">23-NOV-2020</td>
+                                                <td align="center">29-NOV-2020</td>
+                                                <td align="center" style="cursor: pointer;">42014</td>
+                                                <td align="center">8402.8</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">8402.8</td>
+                                                <td align="center">20</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">4</td>
+                                                <td align="center">30-NOV-2020</td>
+                                                <td align="center">06-DEC-2020</td>
+                                                <td align="center" style="color: red; cursor: pointer;">-59575</td>
+                                                <td align="center">2383</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">2383</td>
+                                                <td align="center" style="color:red">-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">5</td>
+                                                <td align="center">07-DEC-2020</td>
+                                                <td align="center">13-DEC-2020</td>
+                                                <td align="center" style="cursor: pointer;">74941</td>
+                                                <td align="center">14988.2</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">14988.2</td>
+                                                <td align="center">20</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">6</td>
+                                                <td align="center">14-DEC-2020</td>
+                                                <td align="center">20-DEC-2020</td>
+                                                <td align="center" style="cursor: pointer;">15509</td>
+                                                <td align="center">3101.8</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">3101.8</td>
+                                                <td align="center">20</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">7</td>
+                                                <td align="center">21-DEC-2020</td>
+                                                <td align="center">27-DEC-2020</td>
+                                                <td align="center" style="color: red; cursor: pointer;">-78461</td>
+                                                <td align="center">3138.44</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">3138.44</td>
+                                                <td align="center" style="color:red">-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">8</td>
+                                                <td align="center">28-DEC-2020</td>
+                                                <td align="center">03-JAN-2021</td>
+                                                <td align="center" style="color: red; cursor: pointer;">-67406.4</td>
+                                                <td align="center">2696.26</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">2696.26</td>
+                                                <td align="center" style="color:red">-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">9</td>
+                                                <td align="center">04-JAN-2021</td>
+                                                <td align="center">10-JAN-2021</td>
+                                                <td align="center" style="color: red; cursor: pointer;">-12940.2</td>
+                                                <td align="center">517.61</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">517.61</td>
+                                                <td align="center" style="color:red">-4</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">10</td>
+                                                <td align="center">11-JAN-2021</td>
+                                                <td align="center">17-JAN-2021</td>
+                                                <td align="center" style="cursor: pointer;">58243.5</td>
+                                                <td align="center">11648.7</td>
+                                                <td align="center">0</td>
+                                                <td align="center">0</td>
+                                                <td align="center">11648.7</td>
+                                                <td align="center">20</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>Total</td>
+                                                <td>09-NOV-2020</td>
+                                                <td>03-DEC-2023</td>
+                                                <td>968710.50</td>
+                                                <td>656970.43</td>
+                                                <td>0.00</td>
+                                                <td>0.00</td>
+                                                <td>656970.43</td>
+                                                <td>67.82</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <!-- <table style="width:100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td><i class="fa-backward fa-lg" style="cursor:pointer;" alt="Page 1"
+                                                        pageval="1"></i></td>
+                                                <td><i class="fa-caret-left fa-lg" style="cursor:pointer;"
+                                                        alt="Previous" pageval="-1"></i></td>
+                                                <td><a href="javascript://" alt="Page 1">1</a></td>
+                                                <td><a href="javascript://" alt="Page 2">2</a></td>
+                                                <td><a href="javascript://" alt="Page 3">3</a></td>
+                                                <td><a href="javascript://" alt="Page 4">4</a></td>
+                                                <td><a href="javascript://" alt="Page 5">5</a></td>
+                                                <td><a href="javascript://" alt="Page 6">6</a></td>
+                                                <td><a href="javascript://" alt="Page 7">7</a></td>
+                                                <td><a href="javascript://" alt="Page 8">8</a></td>
+                                                <td><a href="javascript://" alt="Page 9">9</a></td>
+                                                <td><a href="javascript://" alt="Page 10">10</a></td>
+                                                <td><input id="dvRevenuetxtJqGridGoToPage" type="text" value="1"
+                                                        style="width:30px;text-align:right;"> / 14 <input type="button"
+                                                        value="Go"></td>
+                                                <td><select>
+                                                        <option value="10">10 Records</option>
+                                                        <option value="20">20 Records</option>
+                                                        <option value="30">30 Records</option>
+                                                        <option value="40">40 Records</option>
+                                                        <option value="50">50 Records</option>
+                                                        <option value="60">60 Records</option>
+                                                        <option value="70">70 Records</option>
+                                                        <option value="80">80 Records</option>
+                                                        <option value="90">90 Records</option>
+                                                        <option value="100">100 Records</option>
+                                                    </select></td>
+                                                <td><i class="fa-caret-right fa-lg" style="cursor:pointer;" alt="Next"
+                                                        pageval="+1"></i></td>
+                                                <td><i class="fa-forward fa-lg" style="cursor:pointer;" alt="Last Page"
+                                                        pageval="14"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table> -->
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </form>
+
+        </div>
+    </div>
+    <!--row end-->
+
+    <!--bar-chart-->
+    <div class="bar-chart">
+        <img src="assets/img/login-bar-chart.png" alt="Bar Chart">
+    </div>
+    <!--bar-chart-->
+</div>

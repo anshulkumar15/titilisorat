@@ -1,0 +1,25 @@
+<div id="sidebar">
+    
+   <div class="logo">
+    <!-- <img src="your-logo.png" alt="Your Logo"> -->
+    <h4>Funrep</h4>
+   </div>
+    <ul>
+        <li class="items" *ngFor="let item of sideBarData" routerLink="{{item.link}}" routerLinkActive="active">
+          <!-- <i  [class]="item.icon"></i> -->
+         <div>
+            <img class="icon" src="assets/admin/sidebar/{{item.img}}" alt="">
+         </div>
+          <span class="mt">{{item.name}}</span>
+        </li>
+    </ul>
+
+    <ul class="bottomDiv">
+        <li routerLink="/"><i class="fa-solid fa-right-from-bracket" ></i> Logout</li>
+        <!-- <img src="assets/admin/sidebar/logout.png" alt=""> -->
+    </ul>
+
+    <div class="bottomDiv sm-txt text-center ">Version 1.0.0</div>
+
+  
+</div>

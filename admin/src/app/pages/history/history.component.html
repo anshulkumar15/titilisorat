@@ -1,0 +1,90 @@
+<main class="mt-2">
+
+  <section>
+    <div class="flex">
+
+      <h5>Game history</h5>
+
+      <div class="search-container">
+        <div class="mt-2 pointer">
+          <input class="search-box" #searchBox id="search-box" placeholder="search email..." (input)="search(searchBox.value)" />
+          <!-- <img height="30" class="" src="assets/img/search.png" alt=""> -->
+        </div>
+        <select class="form-select" name="role" [(ngModel)]="report_name" (change)="navigate()">
+          <!-- <option value="/admin/history">All Game</option> -->
+          <!-- <option value="/admin/history/rollet">Roullet</option> -->
+          <option value="/admin/history/funtarget" selected>FunTarget</option>
+          <!-- <option value="/admin/history/triplechance">TripleChance</option> -->
+        </select>
+        <!-- <select class="form-select" name="role" [(ngModel)]="options.role" (ngModelChange)="roleChanged($event)">
+          <option value="">All</option>
+          <option value="1">MiniAdmin</option>
+          <option value="2">Sate</option>
+          <option value="3">City</option>
+          <option value="4">Main</option>
+          <option value="5">Player</option>
+        </select> -->
+        <input class="search-box" #searchMBox id="search-box" placeholder="search manager email..."
+          (input)="searchManager(searchMBox.value)" />
+      </div>
+    </div>
+
+    <div class="scroll">
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Username</th>
+            <th scope="col">Type</th>
+            <th scope="col">Points</th>
+            <th scope="col">Note</th>
+            <th scope="col">Status</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of tableRows | 
+            paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords }
+             ">
+            <!-- {{ options |json }} -->
+            <td> <input type="checkbox" value="{{item.id}}" [checked]="showChecked(item)"
+                (click)="selectItem($event, item)"></td>
+            <td>{{item.email}}</td>
+            <td>Debit</td>
+            
+              
+              <td>1000</td>
+              <td>Play_roulette</td>
+              <td>Success</td>
+              <td>2023-10-22</td>
+  
+             
+            <!-- <td>
+
+              <a class="btn btn btn-primary me-2" href="/admin/users/manage/{{item.id}}">Edit</a>
+              <button class="btn btn btn-danger" (click)="confirm(item.id)">Delete</button>
+
+            </td> -->
+          </tr>
+          <tr *ngIf="tableRows.length===0">
+            <th> </th>
+            <th></th>
+            <th>Record Not Found</th>
+            <th></th>
+            <th></th>
+          </tr>
+
+        </tbody>
+
+
+      </table>
+    </div>
+
+
+
+    <div class="pagination-div">
+
+    </div>
+
+  </section>
+</main>

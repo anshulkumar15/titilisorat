@@ -1,0 +1,77 @@
+<main class="mt-2">
+
+    <section>
+      <div class="flex">
+  
+        <h5>Game controller</h5>
+        <div class="flex justify-content-between">
+          <div class="p-2">Timer: <strong>{{ countdowns.countdown }}</strong>
+          
+        
+          
+          </div>
+          <div>
+            <select class="form-select" [(ngModel)]="game" (change)="navigate()">
+                <!-- <option value="1">TripleChanceGame</option> -->
+                <!-- <option value="2">Roullet Game</option>
+                <option value="3">FunTarget Game</option> -->
+                 <option value="3" selected>Sorat Game</option>
+    
+              </select>
+          </div>
+        </div>
+      </div>
+  
+  
+      
+      <div class="mt-4" >
+        <h2>Roullet Game</h2>
+        <h3>Result : {{ resultCurent }}</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Single</th>
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{rolletAdmin.value}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Current Bet</h3>
+        <div class="d-flex flex-wrap">
+          <!-- <div class="text-center height" *ngFor="let key of getObjectKeys(rolletResult); let i = index">
+            <div class="box" [ngClass]="{'box1': 0}">
+              {{key}}
+            </div>{{rolletResult[key]}}
+          </div> -->
+
+          <div class="text-center height" *ngFor="let key of getFilteredBetKeys(); let i = index">
+  <div class="box" [ngClass]="{'box1': 0}">
+    {{ key }}
+  </div>
+  {{ rolletResult[key] }}
+</div>
+  
+        </div>
+        <div class="d-flex flex-wrap"> <select class="form-select" [(ngModel)]="rolletui">
+            <option value="">SetResult</option>
+            <option [value]="item.key" *ngFor="let item of boxes3; let i = index">{{item.value}}</option>
+          </select>
+          <div class="flex ">
+            <button class="btnn1 " (click)="saveRoullet()">Save</button><button class="btnn1 ml-2"
+              (click)="delRoullet()">Delete</button>
+          </div>
+          <!-- <div class="text-center height" *ngFor="let key of getObjectKeys(rolletResult); let i = index">
+            <div class="box" [ngClass]="{'box1': 0}">
+              {{key}}
+            </div>{{rolletResult[key]}}
+           </div> -->
+        </div>
+      </div>
+    
+  
+    </section>
+  </main>

@@ -1,0 +1,61 @@
+<div class="header">
+    <!--logo-->
+    <div class="logo">
+        <a routerLink="" title="Main Page">
+            <img src="assets/img/logo.png" alt="Logo">
+        </a>
+    </div>
+    <!--user-details-->
+    <div class="user-details">
+        <span>Welcome </span>
+        <strong id="logout"> <em> {{auth.name?? auth.email}} </em>&nbsp;</strong>
+    </div>
+    <div class="panel">
+        <a routerLink="login" title="Logout"><i class="fa-power-off">&nbsp; Logout</i></a>
+    </div>
+    <!--user-details end-->
+
+    <nav>
+        <ul class="toresponsive" id="menu4">
+            <li ><a routerLink="reports"  routerLinkActive="active" >Reports</a>
+                <ul>
+                
+                     
+                    <li><a routerLink="/reports">Point Transfer</a></li>
+                    <li><a routerLink="/reports/daily-status">Daily Status</a></li>
+                    <li><a routerLink="/reports/revenue">revenu</a></li> 
+                                        <li><a routerLink="/reports/round">Last Round </a></li> 
+
+                </ul>
+            </li>
+            <li><a href="/week-report">Weekly Details Reports</a></li>
+            <li>
+                <!-- <a routerLink="/draw-details"  routerLinkActive="active">Draw Details</a> -->
+                <ul>
+                    <!-- <li><a routerLink="/draw-details/fun-target">Fun Target</a></li> -->
+                    <!-- <li><a routerLink="/draw-details/fun-roullet">Fun Roullet</a></li>
+                    <li><a routerLink="/draw-details/triple-fun">Triple Fun</a></li>
+                    <li><a routerLink="/draw-details/fun-ab">Fun AB</a></li> -->
+                </ul>
+             
+            </li>
+             <li>
+                <!-- <a  routerLink="/revenue" routerLinkActive="active">Game Report</a> -->
+                <ul>
+                    <!-- <li class=""><a routerLink="/revenue/rollet-revenu">Roullet Revenue</a></li>
+                    <li><a routerLink="/revenue/funtarget-revenu">Funtargrt Revenue</a></li> -->
+                </ul>
+            </li>
+            <!-- <li><a routerLink="/week-report"  routerLinkActive="active">Weekly Details Reports</a>
+                <ul></ul>
+            </li>  -->
+            <li><a (click)="logout()">LogOut</a>
+                <ul></ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!--nav-->
+
+    <!--nav end-->
+</div>

@@ -1,0 +1,36 @@
+
+<main class="mt-2">
+  
+    <section>
+
+             
+<h5>Point transfer </h5>
+<form #loginForm="ngForm" (ngSubmit)="onTransferSubmit(loginForm)">
+
+<div class="mt-2">
+    <span>Role</span>
+    <select  class="form-select" name="role_id" [(ngModel)]="myForm.role_id" (ngModelChange)="roleChanged($event)">{{authService.getRole()}}
+        <option value="1" *ngIf="authService.getRole() === 0">MiniAdmin</option>
+        <option value="2">State</option>
+        <option value="3">City</option>
+        <option value="4">Main</option>
+        <option value="5">Player</option>
+      </select>
+</div>
+<div  class="mt-2">
+    <span>User ID</span>
+    <input type="text" class="form-control" placeholder="userID" [(ngModel)]="myForm.email" name="email" required>
+</div>
+
+<div class="mt-2">
+    <span>Amount</span>
+    <input min="1" type="number" class="form-control" placeholder="point" [(ngModel)]="myForm.point" name="point" required>
+</div>
+ 
+<button class="btnn1 mt-4" [disabled]="loginForm.form.invalid"  >Send</button>
+</form>
+</section>
+</main>
+
+
+ 

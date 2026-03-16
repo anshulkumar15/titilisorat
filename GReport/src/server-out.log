@@ -1,0 +1,302 @@
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m dashboards.findOne({ type: [32m'dashboard'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:36:59.683Z[39m, e_date: [35m2024-02-18T12:36:59.683Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0;36mMongoose:[0m players.estimatedDocumentCount({})
+[0;36mMongoose:[0m transactions.countDocuments({ logType: [32m'withdraw'[39m, paymentStatus: [32m'PROCESSING'[39m }, {})
+[0mPOST /api/v1/dashboards/filter/dashboard [32m200[0m 19.936 ms - 492[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:36:59.975Z[39m, e_date: [35m2024-02-18T12:36:59.975Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0mPOST /api/v1/dashboards/total-income [32m200[0m 9.428 ms - 64[0m
+handleNotify-body {} {
+  apitxnid: '65d0a1362a4bc6cb2cc07bfa',
+  amount: 100,
+  status: 'failed',
+  refno: '240217053614'
+}
+[0;36mMongoose:[0m settings.findOne({ type: [32m'PAYMENT'[39m, name: [32m'ZERO'[39m }, { projection: {} })
+{
+  statuscode: 'ERR',
+  status: 'ERR',
+  message: 'Request From Invalid Ip Address, 139.59.77.167'
+} hook-reponse
+[0;36mMongoose:[0m transactions.findOne({ paymentId: [90mundefined[39m, status: [32m'log'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.findOneAndUpdate({ _id: ObjectId("65abeadb7f12f5bb8ef5307c") }, { [32m'$setOnInsert'[39m: { createdAt: new Date("Sat, 17 Feb 2024 12:37:05 GMT") }, [32m'$set'[39m: { updatedAt: new Date("Sat, 17 Feb 2024 12:37:05 GMT"), paymentId: [90mundefined[39m, paymentStatus: [32m'ERR'[39m, status: [32m'complete'[39m }}, { upsert: [33mfalse[39m, projection: {}, returnDocument: [32m'before'[39m })
+Deposit added
+[0mPOST /api/v1/payments/zeropg/notify [32m200[0m 185.889 ms - 26[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({ status: [32m'active'[39m }, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({ status: [32m'active'[39m }, {})
+[0mPOST /api/v1/players/ [32m200[0m 15.803 ms - 9356[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({ status: [32m'banned'[39m }, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({ status: [32m'banned'[39m }, {})
+[0mPOST /api/v1/players/?status=banned [32m200[0m 11.905 ms - 59[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m tournaments.find({}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: {} })
+[0;36mMongoose:[0m tournaments.count({}, {})
+[0mPOST /api/v1/Tournaments/ [32m200[0m 12.521 ms - 3116[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m playergames.find({}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: {} })
+[0;36mMongoose:[0m playergames.count({}, {})
+[0;36mMongoose:[0m players.find({ _id: { [32m'$in'[39m: [ ObjectId("65cf1df81ac38094c73b6721"), ObjectId("65b276527f12f5bb8ef54d2e") ] }}, { skip: [90mundefined[39m, limit: [90mundefined[39m, perDocumentLimit: [90mundefined[39m, projection: { firstName: [33m1[39m, lastName: [33m1[39m, rank: [33m1[39m, email: [33m1[39m }})
+[0;36mMongoose:[0m tournaments.find({ _id: { [32m'$in'[39m: [ ObjectId("64afd319fe48a9bede43f226"), ObjectId("64b9156dfe48a9bede43fb83") ] }}, { skip: [90mundefined[39m, limit: [90mundefined[39m, perDocumentLimit: [90mundefined[39m, projection: { name: [33m1[39m }})
+[0mPOST /api/v1/games/ [32m200[0m 21.880 ms - 5842[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({}, {})
+[0mPOST /api/v1/players/ [32m200[0m 19.782 ms - 9356[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ status: [32m'complete'[39m }, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ status: [32m'complete'[39m }, {})
+[0;36mMongoose:[0m players.find({ _id: { [32m'$in'[39m: [ ObjectId("65cf1df81ac38094c73b6721"), ObjectId("65b276527f12f5bb8ef54d2e") ] }}, { skip: [90mundefined[39m, limit: [90mundefined[39m, perDocumentLimit: [90mundefined[39m, sort: { membership: [33m-1[39m }, projection: { firstName: [33m1[39m, lastName: [33m1[39m, phone: [33m1[39m, rank: [33m1[39m, profilePic: [33m1[39m, email: [33m1[39m }})
+[0mPOST /api/v1/transactions/ [32m200[0m 20.903 ms - 3669[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ paymentStatus: [32m'REQUESTED'[39m, logType: [32m'withdraw'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ paymentStatus: [32m'REQUESTED'[39m, logType: [32m'withdraw'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0mPOST /api/v1/transactions/?paymentStatus=REQUESTED [32m200[0m 25.131 ms - 59[0m
+[0;36mMongoose:[0m banners.find({}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: {} })
+[0;36mMongoose:[0m banners.count({}, {})
+[0mPOST /api/v1/banners/ [32m200[0m 8.481 ms - 412[0m
+[0;36mMongoose:[0m coupons.find({}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: {} })
+[0;36mMongoose:[0m coupons.count({}, {})
+[0mPOST /api/v1/coupon/ [32m200[0m 6.662 ms - 740[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m versions.find({}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m1[39m }, projection: { versionControle: [33m1[39m, appLink: [33m1[39m, createdAt: [33m1[39m }})
+[0;36mMongoose:[0m versions.count({}, {})
+[0mPOST /api/v1/versions/ [32m200[0m 8.494 ms - 171[0m
+handleNotify-body {} {
+  apitxnid: '65d0a1f5f811f2ccb6778cc3',
+  amount: 100,
+  status: 'failed',
+  refno: '240217053926'
+}
+[0;36mMongoose:[0m settings.findOne({ type: [32m'PAYMENT'[39m, name: [32m'ZERO'[39m }, { projection: {} })
+{
+  statuscode: 'ERR',
+  status: 'ERR',
+  message: 'Request From Invalid Ip Address, 139.59.77.167'
+} hook-reponse
+[0;36mMongoose:[0m transactions.findOne({ paymentId: [90mundefined[39m, status: [32m'log'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.findOneAndUpdate({ _id: ObjectId("65abf3037f12f5bb8ef5308f") }, { [32m'$setOnInsert'[39m: { createdAt: new Date("Sat, 17 Feb 2024 12:40:12 GMT") }, [32m'$set'[39m: { updatedAt: new Date("Sat, 17 Feb 2024 12:40:12 GMT"), paymentId: [90mundefined[39m, paymentStatus: [32m'ERR'[39m, status: [32m'complete'[39m }}, { upsert: [33mfalse[39m, projection: {}, returnDocument: [32m'before'[39m })
+Deposit added
+[0mPOST /api/v1/payments/zeropg/notify [32m200[0m 143.312 ms - 26[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m dashboards.findOne({ type: [32m'dashboard'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:40:23.923Z[39m, e_date: [35m2024-02-18T12:40:23.923Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0;36mMongoose:[0m players.estimatedDocumentCount({})
+[0;36mMongoose:[0m transactions.countDocuments({ logType: [32m'withdraw'[39m, paymentStatus: [32m'PROCESSING'[39m }, {})
+[0mPOST /api/v1/dashboards/filter/dashboard [32m200[0m 15.097 ms - 492[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:40:24.272Z[39m, e_date: [35m2024-02-18T12:40:24.272Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0mPOST /api/v1/dashboards/total-income [32m200[0m 7.743 ms - 64[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({}, {})
+[0mPOST /api/v1/players/ [32m200[0m 18.303 ms - 9356[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ status: [32m'complete'[39m }, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ status: [32m'complete'[39m }, {})
+[0;36mMongoose:[0m players.find({ _id: { [32m'$in'[39m: [ ObjectId("65cf1df81ac38094c73b6721"), ObjectId("65b276527f12f5bb8ef54d2e") ] }}, { skip: [90mundefined[39m, limit: [90mundefined[39m, perDocumentLimit: [90mundefined[39m, sort: { membership: [33m-1[39m }, projection: { firstName: [33m1[39m, lastName: [33m1[39m, phone: [33m1[39m, rank: [33m1[39m, profilePic: [33m1[39m, email: [33m1[39m }})
+[0mPOST /api/v1/transactions/ [32m200[0m 19.940 ms - 3669[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ paymentStatus: [32m'REQUESTED'[39m, logType: [32m'withdraw'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ paymentStatus: [32m'REQUESTED'[39m, logType: [32m'withdraw'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0mPOST /api/v1/transactions/?paymentStatus=REQUESTED [32m200[0m 13.629 ms - 59[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ paymentStatus: [32m'PROCESSING'[39m, logType: [32m'deposit'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ paymentStatus: [32m'PROCESSING'[39m, logType: [32m'deposit'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0mPOST /api/v1/transactions/?paymentStatus=REQUESTED [32m200[0m 13.454 ms - 59[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ paymentStatus: [32m'ERROR'[39m, logType: [32m'deposit'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ paymentStatus: [32m'ERROR'[39m, logType: [32m'deposit'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0mPOST /api/v1/transactions/?paymentStatus=REQUESTED [32m200[0m 12.469 ms - 59[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ paymentStatus: [32m'SUCCESS'[39m, logType: [32m'deposit'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ paymentStatus: [32m'SUCCESS'[39m, logType: [32m'deposit'[39m, createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0mPOST /api/v1/transactions/?paymentStatus=REQUESTED [32m200[0m 17.490 ms - 59[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m0[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0;36mMongoose:[0m players.find({ _id: { [32m'$in'[39m: [ ObjectId("65a7eb3111ddae7e054d0b0a") ] } }, { skip: [90mundefined[39m, limit: [90mundefined[39m, perDocumentLimit: [90mundefined[39m, sort: { membership: [33m-1[39m }, projection: { firstName: [33m1[39m, lastName: [33m1[39m, phone: [33m1[39m, rank: [33m1[39m, profilePic: [33m1[39m, email: [33m1[39m }})
+[0mPOST /api/v1/transactions/ [32m200[0m 20.999 ms - 2597[0m
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m tournaments.find({ active: [33mtrue[39m }, { projection: {} })
+[0mGET /api/v1/players/tournaments [32m200[0m 17.036 ms - 16295[0m
+c 2873
+[0;36mMongoose:[0m settings.findOne({ type: [32m'SITE'[39m }, { projection: {} })
+[0mGET /api/v1/auth/maintanance [32m200[0m 4.154 ms - 8831[0m
+[0;36mMongoose:[0m versions.find({}, { projection: {} })
+[0mGET /api/v1/players/versionlist [32m200[0m 4.489 ms - 199[0m
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, pan: [33m0[39m }})
+[0;36mMongoose:[0m coupons.find({ couponType: [32m'bonus'[39m, active: [33mtrue[39m }, { projection: {} })
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0mGET /api/v1/players/profile [32m200[0m 24.615 ms - 2118[0m
+[0mGET /api/v1/players/couponlist/bonus [32m200[0m 17.918 ms - 831[0m
+[0;36mMongoose:[0m banners.find({ status: [32m'active'[39m }, { projection: {} })
+[0mGET /api/v1/players/banners [32m200[0m 13.030 ms - 339[0m
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m settings.findOne({ type: [32m'PAYMENT'[39m, name: [32m'ZERO'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.insertOne({ currency: [32m'INR'[39m, taxableAmount: [33m0[39m, totalAmount: [33m0[39m, tds: [33m0[39m, gst: [33m0[39m, gateWayResponse: [], paymentStatus: [32m'PROCESSING'[39m, betNo: [33m0[39m, logType: [32m'payment'[39m, status: [32m'log'[39m, _id: ObjectId("65d0a9ff8628c4cd0bfe51f7"), playerId: ObjectId("65c2ff9f0261d87ded38a4cc"), amount: [33m1[39m, couponId: [32m''[39m, membershipId: [32m''[39m, transactionType: [32m'credit'[39m, note: [32m'Add Money'[39m, paymentGateway: [32m'Phonepay'[39m, prevBalance: [33m0[39m, stateCode: [32m'IN-MH'[39m, createdAt: new Date("Sat, 17 Feb 2024 12:43:43 GMT"), updatedAt: new Date("Sat, 17 Feb 2024 12:43:43 GMT"), __v: [33m0[39m}, { session: [1mnull[22m })
+{
+  statuscode: 'TXN',
+  upiString: {
+    txn_id: 2884,
+    payment_url: 'https://meqr.in/order/payment/2b756de4a1378afb97a51b21fe2350ff',
+    upi_intent: {
+      bhim: 'upi://pay?pa=Q641789534@ybl&pn=WAY2PAY INDIA PRIVATE LIMITED&am=1&mam=0&tr=IT24021718134306979779&tn=Kamlesh Pawar',
+      phonepe: 'phonepe://pay?pa=Q641789534@ybl&pn=WAY2PAY INDIA PRIVATE LIMITED&am=1&mam=0&tr=IT24021718134306979779&tn=Kamlesh Pawar',
+      paytm: 'paytmmp://pay?pa=Q641789534@ybl&pn=WAY2PAY INDIA PRIVATE LIMITED&am=1&mam=0&tr=IT24021718134306979779&tn=Kamlesh Pawar',
+      gpay: 'tez://pay?pa=Q641789534@ybl&pn=WAY2PAY INDIA PRIVATE LIMITED&am=1&mam=0&tr=IT24021718134306979779&tn=Kamlesh Pawar'
+    },
+    qr_image: 'data:image/jpg;base64,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'
+  },
+  apitxnid: '65d0a9ff8628c4cd0bfe51f7'
+}
+[0mPOST /api/v1/payments/zeropg/token [32m200[0m 655.658 ms - 3584[0m
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+ErrorResponse: Order Not Found
+    at /var/www/html/Api/controllers/players.js:319:7
+    at /var/www/html/Api/middleware/async.js:2:19
+    at Layer.handle [as handle_request] (/var/www/html/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/var/www/html/Api/node_modules/express/lib/router/route.js:144:13)
+    at /var/www/html/Api/middleware/auth.js:50:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  statusCode: 200
+}
+[0mPOST /api/v1/players/addMoney [32m200[0m 9.708 ms - 43[0m
+leav-func
+disconnect- undefined undefined undefined
+handleNotify-body {} {
+  apitxnid: '65d0a3778628c4cd0bfe50b7',
+  amount: 100,
+  status: 'failed',
+  refno: '240217054551'
+}
+[0;36mMongoose:[0m settings.findOne({ type: [32m'PAYMENT'[39m, name: [32m'ZERO'[39m }, { projection: {} })
+{
+  statuscode: 'ERR',
+  status: 'ERR',
+  message: 'Request From Invalid Ip Address, 139.59.77.167'
+} hook-reponse
+[0;36mMongoose:[0m transactions.findOne({ paymentId: [90mundefined[39m, status: [32m'log'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.findOneAndUpdate({ _id: ObjectId("65abf3077f12f5bb8ef53094") }, { [32m'$setOnInsert'[39m: { createdAt: new Date("Sat, 17 Feb 2024 12:46:07 GMT") }, [32m'$set'[39m: { updatedAt: new Date("Sat, 17 Feb 2024 12:46:07 GMT"), paymentId: [90mundefined[39m, paymentStatus: [32m'ERR'[39m, status: [32m'complete'[39m }}, { upsert: [33mfalse[39m, projection: {}, returnDocument: [32m'before'[39m })
+Deposit added
+[0mPOST /api/v1/payments/zeropg/notify [32m200[0m 286.341 ms - 26[0m
+handleNotify-body {} {
+  apitxnid: '65d0a9ff8628c4cd0bfe51f7',
+  amount: 1,
+  status: 'success',
+  refno: '404818881914'
+}
+[0;36mMongoose:[0m settings.findOne({ type: [32m'PAYMENT'[39m, name: [32m'ZERO'[39m }, { projection: {} })
+{
+  statuscode: 'ERR',
+  status: 'ERR',
+  message: 'Request From Invalid Ip Address, 139.59.77.167'
+} hook-reponse
+[0;36mMongoose:[0m transactions.findOne({ paymentId: [90mundefined[39m, status: [32m'log'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.findOneAndUpdate({ _id: ObjectId("65abf3187f12f5bb8ef53099") }, { [32m'$setOnInsert'[39m: { createdAt: new Date("Sat, 17 Feb 2024 12:46:11 GMT") }, [32m'$set'[39m: { updatedAt: new Date("Sat, 17 Feb 2024 12:46:11 GMT"), paymentId: [90mundefined[39m, paymentStatus: [32m'ERR'[39m, status: [32m'complete'[39m }}, { upsert: [33mfalse[39m, projection: {}, returnDocument: [32m'before'[39m })
+Deposit added
+[0mPOST /api/v1/payments/zeropg/notify [32m200[0m 3650.519 ms - 26[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m0[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0;36mMongoose:[0m players.find({ _id: { [32m'$in'[39m: [ ObjectId("65c2ff9f0261d87ded38a4cc"), ObjectId("65a7eb3111ddae7e054d0b0a") ] }}, { skip: [90mundefined[39m, limit: [90mundefined[39m, perDocumentLimit: [90mundefined[39m, sort: { membership: [33m-1[39m }, projection: { firstName: [33m1[39m, lastName: [33m1[39m, phone: [33m1[39m, rank: [33m1[39m, profilePic: [33m1[39m, email: [33m1[39m }})
+[0mPOST /api/v1/transactions/ [32m200[0m 32.513 ms - 2947[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({ status: [32m'active'[39m }, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({ status: [32m'active'[39m }, {})
+[0mPOST /api/v1/players/ [32m200[0m 22.495 ms - 9356[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({ status: [32m'active'[39m, [32m'$or'[39m: [ { phone: { [32m'$regex'[39m: [32m'65c2ff9f0261d87ded38a4cc'[39m, [32m'$options'[39m: [32m'i'[39m } }, { email: { [32m'$regex'[39m: [32m'65c2ff9f0261d87ded38a4cc'[39m, [32m'$options'[39m: [32m'i'[39m } }, { firstName: { [32m'$regex'[39m: [32m'65c2ff9f0261d87ded38a4cc'[39m, [32m'$options'[39m: [32m'i'[39m } } ]}, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({ status: [32m'active'[39m, [32m'$or'[39m: [ { phone: { [32m'$regex'[39m: [32m'65c2ff9f0261d87ded38a4cc'[39m, [32m'$options'[39m: [32m'i'[39m } }, { email: { [32m'$regex'[39m: [32m'65c2ff9f0261d87ded38a4cc'[39m, [32m'$options'[39m: [32m'i'[39m } }, { firstName: { [32m'$regex'[39m: [32m'65c2ff9f0261d87ded38a4cc'[39m, [32m'$options'[39m: [32m'i'[39m } } ]}, {})
+[0mPOST /api/v1/players/ [32m200[0m 15.662 ms - 59[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m dashboards.findOne({ type: [32m'dashboard'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:50:26.366Z[39m, e_date: [35m2024-02-18T12:50:26.366Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0;36mMongoose:[0m players.estimatedDocumentCount({})
+[0;36mMongoose:[0m transactions.countDocuments({ logType: [32m'withdraw'[39m, paymentStatus: [32m'PROCESSING'[39m }, {})
+[0mPOST /api/v1/dashboards/filter/dashboard [32m200[0m 20.580 ms - 492[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:50:26.911Z[39m, e_date: [35m2024-02-18T12:50:26.911Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0mPOST /api/v1/dashboards/total-income [32m200[0m 8.726 ms - 64[0m
+c 2873
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m tournaments.find({ active: [33mtrue[39m }, { projection: {} })
+[0mGET /api/v1/players/tournaments [32m200[0m 43.409 ms - 16295[0m
+[0;36mMongoose:[0m settings.findOne({ type: [32m'SITE'[39m }, { projection: {} })
+[0mGET /api/v1/auth/maintanance [32m200[0m 3.739 ms - 8831[0m
+[0;36mMongoose:[0m versions.find({}, { projection: {} })
+[0mGET /api/v1/players/versionlist [32m200[0m 4.299 ms - 199[0m
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, pan: [33m0[39m }})
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0mGET /api/v1/players/profile [32m200[0m 12.859 ms - 2118[0m
+[0;36mMongoose:[0m coupons.find({ couponType: [32m'bonus'[39m, active: [33mtrue[39m }, { projection: {} })
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0mGET /api/v1/players/couponlist/bonus [32m200[0m 18.400 ms - 831[0m
+[0;36mMongoose:[0m banners.find({ status: [32m'active'[39m }, { projection: {} })
+[0mGET /api/v1/players/banners [32m200[0m 16.537 ms - 339[0m
+handleNotify-body {} {
+  apitxnid: '65d0a4a88628c4cd0bfe50c5',
+  amount: 100,
+  status: 'failed',
+  refno: '240217055057'
+}
+[0;36mMongoose:[0m settings.findOne({ type: [32m'PAYMENT'[39m, name: [32m'ZERO'[39m }, { projection: {} })
+{
+  statuscode: 'ERR',
+  status: 'ERR',
+  message: 'Request From Invalid Ip Address, 139.59.77.167'
+} hook-reponse
+[0;36mMongoose:[0m transactions.findOne({ paymentId: [90mundefined[39m, status: [32m'log'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.findOneAndUpdate({ _id: ObjectId("65ad5ec47f12f5bb8ef5381a") }, { [32m'$setOnInsert'[39m: { createdAt: new Date("Sat, 17 Feb 2024 12:51:08 GMT") }, [32m'$set'[39m: { updatedAt: new Date("Sat, 17 Feb 2024 12:51:08 GMT"), paymentId: [90mundefined[39m, paymentStatus: [32m'ERR'[39m, status: [32m'complete'[39m }}, { upsert: [33mfalse[39m, projection: {}, returnDocument: [32m'before'[39m })
+Deposit added
+[0mPOST /api/v1/payments/zeropg/notify [32m200[0m 281.551 ms - 26[0m
+handleNotify-body {} {
+  apitxnid: '65d0a5498628c4cd0bfe50d6',
+  amount: 100,
+  status: 'failed',
+  refno: '240217055338'
+}
+[0;36mMongoose:[0m settings.findOne({ type: [32m'PAYMENT'[39m, name: [32m'ZERO'[39m }, { projection: {} })
+{
+  statuscode: 'ERR',
+  status: 'ERR',
+  message: 'Request From Invalid Ip Address, 139.59.77.167'
+} hook-reponse
+[0;36mMongoose:[0m transactions.findOne({ paymentId: [90mundefined[39m, status: [32m'log'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.findOneAndUpdate({ _id: ObjectId("65af44837f12f5bb8ef538ff") }, { [32m'$setOnInsert'[39m: { createdAt: new Date("Sat, 17 Feb 2024 12:54:07 GMT") }, [32m'$set'[39m: { updatedAt: new Date("Sat, 17 Feb 2024 12:54:07 GMT"), paymentId: [90mundefined[39m, paymentStatus: [32m'ERR'[39m, status: [32m'complete'[39m }}, { upsert: [33mfalse[39m, projection: {}, returnDocument: [32m'before'[39m })
+Deposit added
+[0mPOST /api/v1/payments/zeropg/notify [32m200[0m 165.032 ms - 26[0m
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, pan: [33m0[39m }})
+[0mGET /api/v1/players/profile [32m200[0m 9.353 ms - 2118[0m
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.findOne({ _id: ObjectId("65c2ff9f0261d87ded38a4cc") }, { projection: { deviceToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, pan: [33m0[39m }})
+[0mGET /api/v1/players/profile [32m200[0m 8.839 ms - 2118[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({ status: [32m'active'[39m }, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({ status: [32m'active'[39m }, {})
+[0mPOST /api/v1/players/ [32m200[0m 14.693 ms - 9356[0m
+[0mPOST /api/v1/tickets/ [33m404[0m 0.628 ms - 155[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.find({ createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, { skip: [33m0[39m, limit: [33m0[39m, sort: { _id: [33m-1[39m }, projection: { stateCode: [33m1[39m, logType: [33m1[39m, taxableAmount: [33m1[39m, tds: [33m1[39m, totalAmount: [33m1[39m, withdrawTo: [33m1[39m, playerId: [33m1[39m, amount: [33m1[39m, transactionType: [33m1[39m, note: [33m1[39m, createdAt: [33m1[39m, paymentStatus: [33m1[39m }})
+[0;36mMongoose:[0m transactions.count({ createdAt: { [32m'$gte'[39m: new Date("Sat, 17 Feb 2024 00:00:00 GMT"), [32m'$lt'[39m: new Date("Sun, 18 Feb 2024 00:00:00 GMT") }}, {})
+[0;36mMongoose:[0m players.find({ _id: { [32m'$in'[39m: [ ObjectId("65c2ff9f0261d87ded38a4cc"), ObjectId("65a7eb3111ddae7e054d0b0a") ] }}, { skip: [90mundefined[39m, limit: [90mundefined[39m, perDocumentLimit: [90mundefined[39m, sort: { membership: [33m-1[39m }, projection: { firstName: [33m1[39m, lastName: [33m1[39m, phone: [33m1[39m, rank: [33m1[39m, profilePic: [33m1[39m, email: [33m1[39m }})
+[0mPOST /api/v1/transactions/ [32m200[0m 20.832 ms - 2947[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m dashboards.findOne({ type: [32m'dashboard'[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:58:07.706Z[39m, e_date: [35m2024-02-18T12:58:07.706Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0;36mMongoose:[0m players.estimatedDocumentCount({})
+[0;36mMongoose:[0m transactions.countDocuments({ logType: [32m'withdraw'[39m, paymentStatus: [32m'PROCESSING'[39m }, {})
+[0mPOST /api/v1/dashboards/filter/dashboard [32m200[0m 18.982 ms - 492[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m transactions.aggregate([ { [32m'$match'[39m: { s_date: [35m2024-02-17T12:58:08.014Z[39m, e_date: [35m2024-02-18T12:58:08.014Z[39m, paymentStatus: [32m'SUCCESS'[39m, logType: { [32m'$in'[39m: [ [32m'withdraw'[39m, [32m'deposit'[39m ] } } }, { [32m'$group'[39m: { _id: [32m'$logType'[39m, Total: { [32m'$sum'[39m: [32m'$amount'[39m } } }], {})
+[0mPOST /api/v1/dashboards/total-income [32m200[0m 9.595 ms - 64[0m
+[0;36mMongoose:[0m users.findOne({ _id: ObjectId("649d44807c311c11f0d347f1") }, { projection: { password: [33m0[39m } })
+[0;36mMongoose:[0m players.find({ status: [32m'active'[39m }, { skip: [33m0[39m, limit: [33m10[39m, sort: { _id: [33m-1[39m, email: [33m1[39m, phone: [33m1[39m }, projection: { deviceToken: [33m0[39m, firebaseToken: [33m0[39m, firebaseId: [33m0[39m, password: [33m0[39m, resetPasswordToken: [33m0[39m, resetPasswordExpire: [33m0[39m, verifyPhone: [33m0[39m, aadharNumber: [33m0[39m, panNumber: [33m0[39m, pan: [33m0[39m, wallet: [33m0[39m, bank: [33m0[39m, upi: [33m0[39m, refer_code: [33m0[39m }})
+[0;36mMongoose:[0m players.count({ status: [32m'active'[39m }, {})
+[0mPOST /api/v1/players/ [32m200[0m 16.081 ms - 9356[0m

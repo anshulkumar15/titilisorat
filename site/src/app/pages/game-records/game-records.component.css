@@ -1,0 +1,206 @@
+.gridContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    color: black;
+}
+
+.heading-div{
+    background-color: #b2994e;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.col {
+    width: 30%;
+    margin: 10px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2px;
+    max-height: 220px; /* Set the max height as needed for 5 rows */
+    overflow: auto; /* Enable vertical scrolling */
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #000;
+    color: black;
+}
+
+.table th {
+    background-color: #b2994e; /* Header color */
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2d2bd; /* Alternating row color */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #fff; /* Alternating row color */
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .col{
+        width: 100%;
+    }
+    .gridContainer {
+        flex-direction: column; /* Stack columns on top of each other */
+    }
+}
+
+.welcome-details{
+	float:left;
+	width:100%;
+	height:auto;
+	font-family:Arial,Helvetica,sans-serif;
+	margin:10px 0 0 0;	
+}
+.welcome-details p{
+	margin:0;
+	float:left;
+	width:100%;
+}
+.welcome-details p span{
+	font-size:14px !important;
+	color:#0000ff;
+}
+.wel-msg
+{
+    color:#990000 !important;
+    width:100%;
+    text-align:center;
+}
+.welcome-details p strong{
+	color:#0000c0;
+}
+
+.container
+{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 20px 0 0 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+.error
+{
+    width:632px;
+    float:left;
+    margin:0 0 10px 17%;
+}
+.tbl-container
+{
+    border: 1px solid #CCCCCC;
+	float:left;
+	width:632px;
+	height:auto;
+	margin:0 0 0 20%;
+	
+}
+.tbl-container table{
+	float:none;
+	width:100%;
+}
+.headings{
+	background:#990000;
+	color:#fff;
+	height:26px;
+}
+.c-pass
+{
+    background:#dcdcdc;
+    float:left;
+    width:100%;
+}
+.c-pass table
+{
+    width:auto;
+}
+.subheadings{
+	background:#dcdcdc;	
+	height:26px;
+	width:50%;
+	line-height:24px;
+}
+.subheadings input[type=button], .subheadings input[type=submit]{
+	background:#1e90ff;
+	color:#fff;
+	border:none;
+	width:auto;
+	height:auto;
+	padding:4px 4px;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:14px;
+	float:right;
+	margin:0 10px 0 0;
+}
+
+td
+{
+ border:none !important;    
+}
+
+
+
+
+
+
+.VeryWeekStrength {
+	color: Red;
+	margin: 5px;
+	font-size: 12px;
+}
+
+.WeakStrength {
+	color: orange;
+	margin: 5px;
+	font-size: 12px;
+}
+
+.AverageStrength {
+	color: gray;
+	margin: 5px;
+	font-size: 12px;
+}
+
+.GoodStrength {
+	color: blue;
+	margin: 5px;
+	font-size: 12px;
+}
+
+.ExcellentStrength {
+	color: green;
+	margin: 5px;
+	font-size: 12px;
+}
+
+.BarBorderStyle {
+	margin-top: 5px !important;
+	width: 150px;
+	padding: 2px;
+	/*    height: 6px !important;*/
+}
+
+.error {
+	color: #d73f3f;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.eyeOver {
+	margin-left: -25px;
+	position: relative;
+}

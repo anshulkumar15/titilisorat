@@ -1,0 +1,35 @@
+<!-- <i routerLink="/admin" class="fa-solid fa-house"></i> -->
+<div class="main">
+
+    <form>
+        <div class="loginBox">
+            <h3>Welcome back </h3>
+            <b>Funrep Admin</b>
+
+          <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+
+            <div class="my-3">
+                <div class="my-2">
+                    <input autocomplete="off"  type="email" name="email" ngModel class="form-control form" placeholder="Email">
+                </div>
+                <div class="my-2">
+                    <input autocomplete="off" type="password" name="password" ngModel class="form-control form" placeholder="password">
+
+                </div>
+            </div>
+
+           <div>
+            <!-- <a class="color">Forgot your password?</a> -->
+           </div>
+
+            <button type="submit"   class="btnn my-2 text-center">Sign In </button>
+
+          </form>
+
+          
+
+        </div>
+
+    </form>
+
+</div>

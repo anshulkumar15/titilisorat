@@ -1,0 +1,10 @@
+.captcha {
+  background: #fff !important;
+  border: 2px solid #ee5656 !important;
+  color: green !important;
+  font-size: 24px !important;
+  font-style: italic !important;
+  height: 25px !important;
+  width: 50% !important;
+  margin-right: 6px;
+  }

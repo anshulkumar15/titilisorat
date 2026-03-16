@@ -1,0 +1,90 @@
+<div class="top-bar"></div>
+<div class="gridContainer clearfix">
+
+  <div id="LayoutDiv1">
+    <!--header-->
+    <div class="header">  
+      <!--logo-->
+      <div class="logo">
+        <a href="" title="Main Page">
+          <img src="assets/img/logo.png" alt="Logo"> 
+         
+        </a>
+       <h2> Titli Kabutar</h2>
+      </div>
+     
+      <!--logo end-->
+    </div>
+    <!--header end-->
+
+    <!--container-->
+    <div class="container">
+      <!--login-div-->
+      <form #loginForm="ngForm" >
+        <div class="login-div">
+          <div class="login-row login-row-width">
+            <h2>Login</h2>
+          </div>
+          <div class="login-row fields">
+            <div class="login-label">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="login-fields">
+              <input name="txtUserID" type="text" maxlength="10" id="txtUserID" class="txt-login"
+              autocomplete="off"  [(ngModel)]="model.email" required>
+            </div>
+          </div>
+          <div class="login-row fields">
+            <div class="login-label">
+              <i class="fa fa-lock"></i>
+            </div>
+            <div class="login-fields">
+              <input name="txtPassword" type="password" maxlength="30" id="txtPassword" class="txt-login"
+              autocomplete="off"  [(ngModel)]="model.password"  required>
+            </div>
+          </div>
+          <div class="login-row fields">
+            <div class="login-label">
+              <i class="fa fa-lock"></i>
+            </div>
+            <div class="login-fields">
+              <input name="incaptcha"  [(ngModel)]="incaptcha" type="text" maxlength="6"  minlength="6"  class="txt-login"
+              autocomplete="off" required>
+            </div>
+
+            <span class="captcha">
+              {{this.captchaText}}
+            </span>
+
+          </div>
+          <!-- <div>
+              <span class="field-validation-valid" data-valmsg-for="strLoginID" data-valmsg-replace="true"></span>
+              <span class="field-validation-valid" data-valmsg-for="strLoginPassword" data-valmsg-replace="true"></span>
+              <span class="field-validation-valid" data-valmsg-for="strCaptcha" data-valmsg-replace="true"></span>
+            </div> -->
+          <div class="login-row login-submit">
+            <div class="login-fields">
+              <input type="checkbox"> Remember Me <span style="float:right;"></span>&nbsp;
+            </div>
+             <button   id="btnLogin" class="btnn1" [disabled]="loginForm.form.invalid" (click)="onLogin(loginForm)">Login</button>
+          </div>
+        </div>
+      </form>
+      <!--login-div end-->
+
+      <!--bar-chart-->
+      <div class="bar-chart">
+        <img src="assets/img/login-bar-chart.png" alt="Bar Chart">
+      </div>
+      <!--bar-chart-->
+    </div>
+    <!--container end-->
+
+    <!--footer-->
+    <footer>
+      <div class="copyright">All rights reserved. © Copyright 2014.</div>
+    </footer>
+    <!--footer end-->
+  </div>
+
+</div>

@@ -1,0 +1,343 @@
+<div class="gridContainer">
+    <div id="div1">
+        <div class="welcome-details">
+            <p>
+                Welcome</p>
+            <p>
+                <span>
+                    <span id="lblMemberName">{{authService.name??authService.email}}</span>
+                </span>
+            </p>
+            <p>
+                Your Current Balance is <strong>
+                    <span id="lblCurrentBalance">{{authService.point}}</span></strong>
+                <span id="spanOTC"
+                    style="float:right; margin-right:20px; color:Gray; font-size:large; font-weight:bold;">
+                    OTC is <strong>
+                        <span id="lblOTCBalance" style="color:Blue;">0.00</span></strong>
+                </span>
+            </p>
+            <p class="wel-msg">
+            </p>
+        </div>
+        <div class="container">
+            <div class="side-gallery">
+                <img src="assets/img/Slider1.gif" alt="" height="422px">
+            </div>
+            <div class="tbl-container">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th colspan="2" class="headings" style="text-align: left;">
+                                :: Manage My Points
+                                <table id="rbPointsType" class="button-point"
+                                    style="border-style:None;font-weight:bold;">
+                                    <tbody>
+                                        <tr>
+                                            <td><input id="rbPointsType_0" type="radio"
+                                                    name="rbPointsType" value="GK"
+                                                    checked="checked"><label for="rbPointsType_0"> GK
+                                                    Points</label></td>
+                                            <td><input id="rbPointsType_1" type="radio"
+                                                    name="rbPointsType" value="PK"><label
+                                                    for="rbPointsType_1"> Multiplayer Points</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="subheadings">
+                                <div>
+                                    <span>
+                                        Receivables</span> <span>
+                                            
+                                        <input type="submit" (click)="getViewData()" name="btnRefresh" value="Refresh"
+                                            id="btnRefresh"></span>
+                                </div>
+                            </td>
+                            <td class="subheadings">
+                                <div>
+                                    <span>
+                                        Transferable</span> <span>
+                                        <input
+                                        (click)="getViewData()"
+                                         type="submit" name="btnPointTransfer"
+                                            value="Point Transfer" id="btnPointTransfer"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="title-details">
+                                <table style="width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 15%;">
+                                                Select
+                                            </td>
+                                            <td style="width: 40%;">
+                                                From Member ID
+                                            </td>
+                                            <td style="width: 35%;">
+                                                Amount
+                                            </td>
+                                            <td style="width: 10%;">
+                                                Type
+                                            </td>
+                                        </tr>
+                                     
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td class="title-details">
+                                <table style="width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 15%;">
+                                                Select
+                                            </td>
+                                            <td style="width: 40%;">
+                                                From Member ID
+                                            </td>
+                                            <td style="width: 35%;">
+                                                Amount
+                                            </td>
+                                            <td style="width: 10%;">
+                                                Type
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="let item of sendArr">
+                                            <td><input type="checkbox" value="{{item._id}}" [checked]="showSendChecked(item)"
+                                                (click)="selectSendItem($event, item)"></td>
+                                            <td>{{item.from}} </td>
+                                            <td>{{item.amount}}</td>
+                                            <td>{{item.status}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <td class="data">
+                                <div class="ScrollDiv">
+                                    <div>
+                                        <table style="width: 100%;">
+                                            <tbody>
+                                                <tr class="title-details">
+                                                    <td style="width: 15%;">
+                                                        Select
+                                                    </td>
+                                                    <td style="width: 40%;">
+                                                        From Member ID
+                                                    </td>
+                                                    <td style="width: 35%;">
+                                                        Amount
+                                                    </td>
+                                                    <td style="width: 10%;">
+                                                        Type
+                                                    </td>
+                                                </tr>
+                                                <tr  *ngFor="let item of receiveArr">
+                                                    <td><input type="checkbox" value="{{item._id}}" [checked]="showReciveChecked(item)"
+                                                        (click)="selectReciveItem($event, item)"></td>
+                                                    <td>{{item.FromAccountName}} </td>
+                                                    <td>{{item.point}}</td>
+                                                    <td>{{item.status}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="data">
+                                <div class="ScrollDiv">
+                                    <div>
+                                        <table style="width: 100%;">
+                                            <tbody>
+                                                <tr class="title-details">
+                                                    <td style="width: 15%;">
+                                                        Select
+                                                    </td>
+                                                    <td style="width: 40%;">
+                                                        From Member ID
+                                                    </td>
+                                                    <td style="width: 35%;">
+                                                        Amount
+                                                    </td>
+                                                    <td style="width: 10%;">
+                                                        Type
+                                                    </td>
+                                                </tr>
+                                                <tr *ngFor="let item of sendArr">
+                                                    <td><input type="checkbox" value="{{item._id}}" [checked]="showSendChecked(item)"
+                                                        (click)="selectSendItem($event, item)"></td>
+                                                    <td>{{item.to}} </td>
+                                                    <td>{{item.amount}}</td>
+                                                    <td>{{item.status}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="footer">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="aspNetDisabled"><input
+                                                        id="chkBoxSelectAllReceive" type="checkbox"
+                                                        name="chkBoxSelectAllReceive"
+                                                        disabled="disabled" (click)="selectReciveAll($event)"><label
+                                                        for="chkBoxSelectAllReceive">Select
+                                                        All</label></span>
+                                            </td>
+                                            <td>
+                                                <input
+                                                [disabled]="selectedReceive.length===0" (click)="DeleteUpdate()"
+                                                type="submit" name="btnReceive"
+                                                    value="Receive" id="btnReceive" disabled="disabled"
+                                                    class="aspNetDisabled">
+                                            </td>
+                                            <td>
+                                                <input 
+                                                [disabled]="selectedReceive.length===0" (click)="rejectPoint()"
+                                                type="submit" name="btnReject"
+                                                    value="Reject" id="btnReject" disabled="disabled"
+                                                    class="aspNetDisabled">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td class="footer">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="aspNetDisabled"><input
+                                                    (click)="selectSendAll($event)"
+                                                        id="chkBoxSelectAllTransfer" type="checkbox"
+                                                        name=""
+                                                        disabled="disabled"><label
+                                                        for="chkBoxSelectAllTransfer">Select
+                                                        All</label></span>
+                                            </td>
+                                            <td>
+                                                <input 
+                                                [disabled]="selectedSender.length===0" (click)="cancelTransferableId()"
+                                                type="submit" name=""
+                                                    value="Cancel" id="btnCancel" disabled="disabled"
+                                                    class="aspNetDisabled">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="pnlPointTransfer">
+                    <form #loginForm="ngForm" (ngSubmit)="onTransferSubmit(loginForm)">
+
+                    <table class="p-trans">
+                        <tbody>
+                            <tr>
+                                <th class="headings" style="text-align: left;">
+                                    :: Point Transfer
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="p-child">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    To Account No. :
+                                                </td>
+                                                <td>
+                                                   
+                                                        <input [(ngModel)]="transferData.receive" autocomplete="off" type="text" name="receive"
+                     placeholder="To Account No	" minlength="10" required>
+                                                </td>
+                                                <!-- <td>
+                                            <span id="reqTransferID" style="color: red; display: inline;">* Please Provide Member ID</span>
+                                            <span id="regTransferID" style="color:Red;display:none;">* Member ID not Proper</span>
+                                        </td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Your Pin :
+                                                </td>
+                                                <td>
+ 
+                                                        <input autocomplete="off" [(ngModel)]="transferData.pin" type="password" name="pin"
+                     placeholder="pin" minlength="4" required>
+                                                </td>
+                                                <td>
+                                                    <span id="reqMemberPin"
+                                                        style="color:Red;display:none;">* Please Provide Your Account
+                                                        Pin</span>
+                                                    <span id="regMemberPin"
+                                                        style="color:Red;display:none;">* Numeric Value Allowed
+                                                        Only</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Amount :
+                                                </td>
+                                                <td>
+                                              
+                                                        <input autocomplete="off"  [(ngModel)]="transferData.point" type="number" name="point"
+                                                        placeholder="Points..." required>
+                                                </td>
+                                                <td>
+                                                    <span id="reqTransferAmount"
+                                                        style="color:Red;display:none;">* Please Provide Amount To
+                                                        Transfer</span>
+                                                    <span id="rngValidateAmount"
+                                                        style="color:Red;display:none;">* You can transfer Points
+                                                        between 1 to 1000000</span>
+                                                    <span id="cmpValidateAmount"
+                                                        style="color:Red;display:none;">* Balance is not Enough</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+
+                                                </td>
+                                                <td>
+                                                    <span id="cusValidateNarration"
+                                                        style="color:Red;display:none;">* Maximum Limit is 50 Characters
+                                                        only.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="submit" name=""  [disabled]="loginForm.form.invalid"
+                                                        value="Transfer">
+                                                         
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    <a id="lnkBtnClose"
+                                                        href="javascript:__doPostBack(&#39;lnkBtnClose&#39;,&#39;&#39;)">Close</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </form>
+                </div>
+            </div>
+            <div class="side-gallery">
+                <img src="assets/img/Slider2.gif" alt="" height="422px">
+            </div>
+        </div>
+    </div>
+</div>

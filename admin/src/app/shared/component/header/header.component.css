@@ -1,0 +1,79 @@
+header {
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+  margin: auto;
+}
+
+.left-side {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.search-container {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px; 
+  
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px 30px; /* Adjust the padding to make room for the icon */
+  border: none;
+  border-radius: 0px;
+  font-size: 14px;
+  background-color:#C0D3CD;
+  outline: none;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;
+  justify-content: end;
+}
+
+.user-icon {
+  margin-right: 10px;
+}
+
+.settings {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Adjust styles for small screens */
+  .left-side, .search-container, .right-side {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+  }
+
+  .search-box {
+      margin-top: 10px;
+  }
+
+  .right-side {
+    justify-content: start;
+    margin-top: 5px;
+  }
+  .search-icon {
+top: 22px;
+  }
+}

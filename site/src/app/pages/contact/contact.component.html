@@ -1,0 +1,107 @@
+<div class="gridContainer">
+    <div id="div1">
+    <div class="contact">
+     <div>
+      <span><h3>Contact US :</h3></span>
+      <span class="error">
+       
+      </span>
+     </div>
+     <div class="contact-tbl">
+      <span>
+       <table id="siteDataHolder_rdbEnquiryType">
+      <tbody><tr>
+          <td><input id="siteDataHolder_rdbEnquiryType_0" type="radio" name="ctl00$siteDataHolder$rdbEnquiryType" value="C" checked="checked"><label for="siteDataHolder_rdbEnquiryType_0">Complaint</label></td><td><input id="siteDataHolder_rdbEnquiryType_1" type="radio" name="ctl00$siteDataHolder$rdbEnquiryType" value="B" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$siteDataHolder$rdbEnquiryType$1\&#39;,\&#39;\&#39;)&#39;, 0)"><label for="siteDataHolder_rdbEnquiryType_1">Distributor / Agency / Business Enquiry</label></td>
+      </tr>
+  </tbody></table>
+      </span>
+      <table>
+       <tbody><tr>
+        <td colspan="3">
+         <div id="siteDataHolder_vldSummarySend" class="error-msg" style="display:none;">
+  
+  </div>
+        </td>
+       </tr>
+       <tr>
+        <td>Full Name : </td>
+        <td>
+         <input name="ctl00$siteDataHolder$txtFullName" type="text" id="siteDataHolder_txtFullName" style="width:260px;">
+        </td>
+        <td>
+         <span id="siteDataHolder_reqFullName" style="color:Red;visibility:hidden;">*</span>
+         <span id="siteDataHolder_regFullName" style="color:Red;visibility:hidden;">*</span>
+        </td>
+       </tr>
+       <tr>
+        <td>Mobile No. :</td>
+        <td>
+         <input name="ctl00$siteDataHolder$txtMobile" type="text" maxlength="10" id="siteDataHolder_txtMobile" style="width:260px;">
+        </td>
+        <td>
+         <span id="siteDataHolder_reqMobile" style="color:Red;visibility:hidden;">*</span>
+          <span id="siteDataHolder_regMobile" style="color:Red;visibility:hidden;">*</span>
+        </td>
+       </tr>
+       <tr>
+        <td>Email ID :</td>
+        <td>
+         <input name="ctl00$siteDataHolder$txtEmail" type="text" id="siteDataHolder_txtEmail" style="width:260px;">
+        </td>
+        <td>
+         <span id="siteDataHolder_reqEmail" style="color:Red;visibility:hidden;">*</span>
+         <span id="siteDataHolder_regEmail" style="color:Red;visibility:hidden;">*</span>
+        </td>
+       </tr>
+       <tr>
+        <td colspan="3">
+         <div id="siteDataHolder_pnlCompalint">
+      
+          <table style="width:100%;">
+           <tbody><tr>
+            <td valign="top">Complaint Details :</td>
+            <td style="padding-left: 6px;">
+             <textarea name="ctl00$siteDataHolder$txtDetails" rows="4" cols="38" id="siteDataHolder_txtDetails"></textarea>
+            </td>
+            <td>
+             <span id="siteDataHolder_reqDetails" style="color:Red;visibility:hidden;">*</span> 
+            </td>
+           </tr>
+          </tbody></table>
+         
+  </div>
+         
+        </td>
+       </tr>
+       <tr>
+        <td>Enter Below Code :</td>
+        <td>
+         <input name="ctl00$siteDataHolder$txtCapcha" type="text" id="siteDataHolder_txtCapcha" style="width:260px;">
+        </td>
+        <td>
+         <span id="siteDataHolder_reqCapcha" style="color:Red;visibility:hidden;">*</span>
+        </td>
+       </tr>
+       <tr>
+        <td></td>
+        <td valign="middle">
+         <div id="siteDataHolder_updPnlCaptcha">
+      
+           <div class="captcha">
+            <img id="siteDataHolder_imgCaptcha" src="./funrep _ Contact US_files/GenerateCaptcha.aspx">
+            <input type="image" name="ctl00$siteDataHolder$imgRefreshButton" id="siteDataHolder_imgRefreshButton" src="./funrep _ Contact US_files/RefreshButton.png">
+           </div>
+          
+  </div>
+        </td>
+       </tr>
+       <tr>
+        <td colspan="3" align="center">
+         <input type="submit" name="ctl00$siteDataHolder$btnSendEnquiry" value="Send Enquiry" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$siteDataHolder$btnSendEnquiry&quot;, &quot;&quot;, true, &quot;SendMail&quot;, &quot;&quot;, false, false))" id="siteDataHolder_btnSendEnquiry">
+        </td>
+       </tr>
+      </tbody></table>
+     </div>
+     </div>
+    </div>
+   </div>

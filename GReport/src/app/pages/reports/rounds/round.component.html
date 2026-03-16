@@ -1,0 +1,90 @@
+<main class="mt-6 px-6">
+
+  <section>
+    <!-- Header -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+      <h5 class="text-xl font-semibold">Game History</h5>
+
+      <div class="flex flex-wrap items-center gap-2">
+
+        <!-- Date Range -->
+        <!-- <div class="flex items-center gap-1">
+          <input type="date" class="input input-bordered px-3 py-1 rounded-md" name="s_date" [(ngModel)]="options.s_date"
+            (ngModelChange)="sdateChanged($event)" />
+          <span class="mx-1">-</span>
+          <input type="date" class="input input-bordered px-3 py-1 rounded-md" name="e_date" [(ngModel)]="options.e_date" />
+        </div> -->
+
+        <!-- Search -->
+        <!-- <div class="relative">
+          <input type="text" id="search-box" placeholder="Search..."
+            class="input input-bordered pl-10 pr-3 py-1 rounded-md"
+            #searchBox (input)="search(searchBox.value)" />
+          <i class="fas fa-search absolute left-3 top-2 text-gray-500"></i>
+        </div> -->
+
+        <!-- Dropdown -->
+        <!-- <select class="input input-bordered px-3 py-1 rounded-md" name="report_name" [(ngModel)]="report_name" (change)="navigate()">
+          <option value="/admin/history/funtarget">FunTarget</option>
+        </select> -->
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto rounded-lg shadow-md">
+      <table class="min-w-full divide-y divide-gray-200 bg-white text-sm">
+      <thead class="bg-gray-100 text-left text-gray-700 font-semibold">
+  <tr>
+    <th class="px-4 py-2">#</th>   <!-- 👈 serial number column -->
+    <!-- <th class="px-4 py-2">Round</th> -->
+    <th class="px-4 py-2">Win No</th>
+    <th class="px-4 py-2">Time</th>
+  </tr>
+</thead>
+
+     <tbody class="divide-y divide-gray-100">
+  <tr *ngFor="let item of tableRows | paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords }; let i = index">
+    
+    <!-- Serial No -->
+    <td class="px-4 py-2">
+      {{ (options.page - 1) * options.size + i + 1 }}
+    </td>
+
+    <!-- Round -->
+    <!-- <td class="px-4 py-2">{{ item.RoundCount }}</td> -->
+
+    <!-- Win No -->
+    <td class="px-4 py-2">
+      <img [src]="getWinImagePath(item.Win_singleNo)" alt="Win Image" class="h-2 w-2 object-contain imageSize" />
+    </td>
+
+    <!-- Time -->
+    <td class="px-4 py-2">
+      {{ item.playedTime | date:'dd MMMM yyyy hh:mm:ss a' }}
+    </td>
+  </tr>
+
+  <tr *ngIf="tableRows.length === 0">
+    <td colspan="4" class="text-center text-gray-500 py-4">Record Not Found</td>
+  </tr>
+</tbody>
+
+      </table>
+    </div>
+
+    <!-- Pagination & Size -->
+    <div class="flex flex-wrap justify-between items-center mt-6">
+      <div class="text-sm text-gray-700">
+        Size:
+        <select class="border border-gray-300 px-2 py-1 rounded-md" name="nights" [ngModel]="options.size" (change)="pageSizeChange($event)">
+          <option *ngFor="let n of pageArr" [value]="n">{{ n }}</option>
+        </select>
+        Showing {{options.startIndex}} to {{options.endIndex}} of {{options.totalRecords}} entries
+      </div>
+
+      <pagination-controls previousLabel="« Prev" nextLabel="Next »" (pageChange)="pageChange($event)">
+      </pagination-controls>
+    </div>
+  </section>
+
+</main>

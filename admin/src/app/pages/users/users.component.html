@@ -1,0 +1,96 @@
+<main class="mt-2">
+  
+    <section>
+<div class="flex">
+             
+<h5>All Users</h5>
+<div class="col-sm-6 col-11  flex justify-content-between">
+
+  <div class="mt-1">
+    <select class="form-select" name="role" [(ngModel)]="options.role" (ngModelChange)="roleChanged($event)">
+      <option value="">All</option>
+
+      <option value="1">MiniAdmin</option>
+      <option value="2">State</option>
+      <option value="3">City</option>
+      <option value="4">Main</option>
+      <option value="5">Player</option>
+    </select>
+  </div>
+ <div class="mt-1"> <button class="btnn" routerLink="search-master">Master data</button></div>
+ <div class="mt-1"> <button class="btnn1" routerLink="add">Create</button></div>
+   
+</div>
+</div>
+<div class="scroll">
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        
+        <th scope="col">Username</th>
+        <th scope="col">Role</th>
+        <th scope="col">Password</th>
+        <th scope="col">Points</th>
+        <th scope="col">Manager Id</th>
+        
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableRows | 
+      paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+      let i = index ">
+        <td scope="row"> <input type="checkbox" value="{{item.id}}" [checked]="showChecked(item)"
+          (click)="selectItem($event, item)"></td>
+         <td>{{item.email}}</td>
+         <td>{{authService.roleName[item.role_id] }}</td>
+
+        <td (click)="revealValue(i)">
+          <div *ngIf="!revealMode[i]">*** <i class="fa-regular fa-eye "></i></div>
+          <div *ngIf="revealMode[i]">{{item.password }}</div>
+           <!-- <i class="fa-regular fa-eye-slash"></i> -->
+         
+        </td>
+         <td>{{item.point}}</td>
+         <td>{{item.idManager}}</td>
+        <td>
+          <div class="d-flex justify-content-around mt-1">
+            <i class="fa-regular fa-pen-to-square" [routerLink]="['/admin/users', item._id]"></i>
+            <i class="fa-solid fa-trash"(click)="confirm(item.email)" ></i>
+ 
+          
+          </div>
+        </td>
+      </tr>
+     
+    </tbody>
+
+  
+  </table>
+</div>
+
+  <div class="pagination-div">
+   
+    <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+          Size: <select class="form-dropdown" name="nights" [ngModel]="options.size" (change)="pageSizeChange($event)"
+            required>
+
+            <option [value]="n" *ngFor="let n of pageArr index as i">{{n}}</option>
+          </select>
+          Showing
+          {{options.startIndex}} to
+          {{options.endIndex}} of {{options.totalRecords}}
+          entries
+        </div>
+  
+  
+        <div class="clearfix">
+          <pagination-controls previousLabel="" nextLabel="" (pageChange)="pageChange($event)"></pagination-controls>
+    
+    
+        </div>
+    </div>
+
+    </section>
+</main>

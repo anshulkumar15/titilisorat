@@ -1,0 +1,23 @@
+<header>
+  <div class="left-side">
+      <div><h4>{{auth.name?? 'Admin'}}</h4></div>
+      <span class="sm-txt">Welcome back, Let's get back to work</span>
+  </div>
+
+  <div class="search-container">
+      <!-- <i class="fa fa-search search-icon" aria-hidden="true"></i> -->
+      <img class="search-icon" src="assets/admin/home/search 1.png" alt="">
+      <input type="text" class="search-box" placeholder="Search...">
+  </div>
+
+  <div class="right-side">
+      <div class="settings">
+        <!-- <i class="fa fa-cog" aria-hidden="true"></i> -->
+        <img routerLink="/admin/setting" src="assets/admin/home/setting.png" alt="">
+    </div>
+      <div class="settings">
+        <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+        <img src="assets/admin/home/userprofile.png" alt="">
+    </div>
+  </div>
+</header>

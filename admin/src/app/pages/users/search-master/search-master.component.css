@@ -1,0 +1,38 @@
+
+section{
+    max-width: 870px;
+}
+
+
+.search-container {
+    position: relative;
+    width: 300px; 
+    color: #115740;
+}
+
+.search-input {
+    width: 80%;
+    padding: 5px;
+    box-sizing: border-box;
+    float: right;
+    color: #115740;
+    border: 2px solid #115740;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+/* table css  */
+
+.table>thead {
+    vertical-align: bottom;
+    background: #eceff7;
+    border-color: inherit;
+}

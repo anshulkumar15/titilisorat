@@ -1,0 +1,81 @@
+<div class="login">
+    <div class="error-msg2">
+
+        <span id="locationErrorMsg" style="display:block;" display="block"></span>
+    </div>
+    <div class="login2"></div>
+    <div class="title"></div>
+    <div class="navigation">
+        <ul>
+            <li><a href="#">About Us</a></li> |
+            <li><a href="#">MGM</a></li> |
+            <li><a href="#">Tutorials</a></li> |
+            <li><a href="#">FAQ's</a></li> |
+            <li><a href="#">Downloads</a></li> |
+            <li><a href="Contact.aspx">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="error-login">
+        <div id="vldSummaryLogin" style="display:none;">
+
+        </div>
+    </div>
+    <div class="login-box">   
+        <form #loginForm="ngForm" >
+        <table>
+
+            <tbody>
+                <tr>
+                    <td>Login  <span style="color:Red">*</span> </td>
+                    <td align="right">
+                        <input name="txtUserID" type="text" maxlength="10" id="txtUserID" class="txt-login"
+                            autocomplete="off"  [(ngModel)]="model.email" required>
+                    </td>
+                    <td>
+                     </td>
+                </tr>
+                <tr>
+                    <td>Password <span style="color:Red">*</span></td>
+                    <td align="right">
+                        <input name="txtPassword" type="password" maxlength="30" id="txtPassword" class="txt-login"
+                            autocomplete="off"  [(ngModel)]="model.password"  required>
+                    </td>
+                    <td>
+                      
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Below Number <span style="color:Red">*</span></td>
+                    <td align="right">
+                        <input name="incaptcha"  [(ngModel)]="incaptcha" type="text" maxlength="6"  minlength="6"  class="txt-login"
+                            autocomplete="off" required>
+                    </td>
+                    <td>
+                        <span id="reqCaptcha" style="color:Red;visibility:hidden;">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center" valign="middle">
+                        <div id="updPnlCaptcha">
+
+                            <div class="updPnlCaptcha">
+                                <!-- <img id="imgCaptcha"
+                                    src="assets/img/GenerateCaptcha.jpg"> -->
+                                    
+                                    <input class="captcha" type="text"  name="captchaText"  [(ngModel)]="captchaText" readonly (copy)="onCopy($event)">
+                                    <input type="image" name="imgBtnRefreshCaptcha" id="imgBtnRefreshCaptcha"
+                                    src="assets/img/RefreshButton.png" (click)="regCapcha()" readonly> 
+                                
+                                    <input type="submit"  name="btnLogin" value="GO" id="btnLogin" class="aspNetDisabled" [disabled]="loginForm.form.invalid" (click)="onLogin(loginForm)">
+
+                            </div>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+
+    </div>
+</div>

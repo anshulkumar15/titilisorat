@@ -1,0 +1,12 @@
+<!-- accordion.component.html -->
+<div class="accordion">
+    <div *ngFor="let item of items" class="accordion-item">
+      <div class="accordion-header" (click)="toggleItem(item)">
+        <i class="fa fa-caret-down arrow-icon"  [ngClass]="{'up': selectedItem === item}"></i>
+        {{ item.title }}
+      </div>
+      <div *ngIf="selectedItem === item" class="accordion-content">
+        {{ item.content }}
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,107 @@
+<main class="mt-2">
+
+    <section>
+      <div class="flex">
+  
+        <h5>Live Player</h5>
+  
+        <div class="flex">
+          <!-- <div><input class="search-input" name="s_date" type="date" [(ngModel)]="options.s_date"
+              (ngModelChange)="sdateChanged($event)"></div>
+          <div> - </div>
+          <div class="mr-1">
+  
+            <input class="search-input" name="e_date" type="date" [(ngModel)]="options.e_date">
+          </div> -->
+  
+  
+          <!-- <div class="search-container">
+            <input class="search-input" #searchBox id="search-box" placeholder="" (input)="search(searchBox.value)" />
+            <i class="fas fa-search search-icon"></i>
+          </div> -->
+          <div>
+            <select class="form-select" name="report_name" [(ngModel)]="report_name" (change)="navigate()">
+              <!-- <option value="/admin/history">All Game</option> -->
+              <!-- <option value="/admin/history/rollet">Roullet</option> -->
+              <!-- <option value="/admin/history/funtarget">FunTarget</option> -->
+              <!-- <option value="/admin/history/triplechance">TripleChance</option> -->
+            </select>
+          </div>
+  
+          <!-- <select class="form-select" name="role" [(ngModel)]="options.role" (ngModelChange)="roleChanged($event)">
+              <option value="">All</option>
+              <option value="1">MiniAdmin</option>
+              <option value="2">Sate</option>
+              <option value="3">City</option>
+              <option value="4">Main</option>
+              <option value="5">Player</option>
+            </select> -->
+          <!-- <input class="search-box" #searchMBox id="search-box" placeholder="search manager email..." (input)="searchManager(searchMBox.value)" /> -->
+        </div>
+      </div>
+  
+      <div class="scroll">
+        <table class="table mt-4">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Username</th>
+              <!-- <th scope="col">RoundCount</th>
+              <th scope="col">WinNo</th>
+              <th scope="col">bet</th>
+               <th scope="col">Win</th>
+              <th scope="col">Time</th> -->
+            </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let item of tableRows | 
+              paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords }; let i = index">
+            <td>{{ (options.page - 1) * options.size + i + 1 }}</td> <!-- Sr No -->
+            <td>{{ item.playername }}</td>
+            <!-- <td>{{ item.RoundCount }}</td>
+            <td>{{ item.Win_singleNo }}</td>
+            <td>{{ item.betpoint }}</td>
+            <td>{{ item.winpoint }}</td>
+            <td>{{ item.playedTime | date }}</td> -->
+          </tr>
+
+            <tr *ngIf="tableRows.length===0">
+              <th> </th>
+              <th></th>
+              <th>Record Not Found</th>
+              <th></th>
+              <th></th>
+            </tr>
+  
+          </tbody>
+  
+  
+        </table>
+      </div>
+  
+  
+  
+      <div class="pagination-div">
+        <!-- <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+          Size: <select class="form-dropdown" name="nights" [ngModel]="options.size"
+              (change)="pageSizeChange($event)" required>
+
+              <option [value]="n" *ngFor="let n of pageArr index as i">{{n}}</option>
+          </select>
+          Showing
+          {{options.startIndex}} to
+          {{options.endIndex}} of {{options.totalRecords}}
+          entries
+      </div> -->
+
+
+      <!-- <div class="clearfix">
+          <pagination-controls previousLabel="" nextLabel=""
+              (pageChange)="pageChange($event)"></pagination-controls>
+
+
+      </div> -->
+      </div>
+  
+    </section>
+  </main>

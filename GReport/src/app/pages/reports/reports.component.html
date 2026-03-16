@@ -1,0 +1,142 @@
+<div class="container">
+    <h2>Point Transfer</h2>
+
+    <span class="remainLoan"></span>
+    <!--row-->
+    <div class="row">
+        <div>
+
+
+            <form action="/Reports.mvc" method="post">
+                <table style="width:100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="row-left">
+                                    <label for="strFromDate">From Date : </label>
+                                    <span class="DatePicker_Icon_Wrapper"
+                                        style="display: inline-block; position: relative; float: none; inset: auto;">
+                                        <input name="s_date" type="date" [(ngModel)]="options.s_date">
+                                    </span>
+                                </div>
+                                <div class="row-mid">
+                                    <label for="strToDate">To Date : </label>
+
+                                    <span class="DatePicker_Icon_Wrapper"
+                                        style="display: inline-block; position: relative; float: none; inset: auto;">
+                                        <input name="e_date" type="date" [(ngModel)]="options.e_date">
+
+                                    </span>
+                                </div>
+
+
+                                <div class="row-mid">
+                                
+                                        <span *ngIf="auth.getRole() != 5" >
+                                            <label for="MemberID">Member ID </label>
+                                            <input name="search" class="search-input" #searchBox id="search-box" placeholder=""
+                                                [(ngModel)]="options.search" (input)="search(searchBox.value)" /> 
+                                        </span>
+                                    <select name="type" id="" [(ngModel)]="options.type"  (ngModelChange)="typeChanged($event)" class="form-select">
+                                        <option value="send">Point Transferred</option>
+                                        <option value="receive">Points Received</option>
+                                        <option value="pending">Points Transferred But yet to be Received</option>
+                                        <option value="accept">Points yet to be Received</option>
+                                        <!-- <option value="reject">Points Rejected</option>
+                                        <option value="canceled">Points Canceled</option> -->
+                                    </select>
+                                </div>
+                                <div class="row-right show-details-button">
+                                    <input type="button" name="btnShowDetails" id="btnShowDetails" value="Show Details"
+                                        (click)="typeChanged(options.type)">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="grid" id="dvRevenue">
+                                    <table style="width:100%;">
+                                        <thead >
+                                            <tr>
+
+                                                <th *ngFor="let item of headers" >{{item}}</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                            <tr *ngFor="let item of tableRows | 
+                                              paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+                                              index as i;">
+                                                <!-- {{ options |json }} -->
+                                                <td> {{i+1}} </td>
+                                                <td>{{item.account}}</td>
+                                                <td>{{item.point |number}}</td>
+                                                <td>{{item.Date |date:'medium'}}</td>
+                                            </tr>
+                                            <tr *ngIf="tableRows.length===0">
+                                                  <th colspan="5">Record Not Found</th>
+                                              </tr>
+
+                                        </tbody>
+                                        <tfoot>
+                                            <tr *ngFor="let item of totalRows 
+                                            
+                                            index as i;">
+
+                                                <td></td>
+                                                <td>Total : </td>
+                                                
+                                                <td>{{item.total}}</td>
+                                                <td></td>
+
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <div class="pagination-div">
+
+                                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status"
+                                            aria-live="polite">
+                                            Size: <select class="form-dropdown" name="nights" [ngModel]="options.size"
+                                                (change)="pageSizeChange($event)" required>
+
+                                                <option [value]="n" *ngFor="let n of pageArr index as i">{{n}}</option>
+                                            </select>
+                                            Showing
+                                            {{options.startIndex}} to
+                                            {{options.endIndex}} of {{options.totalRecords}}
+                                            entries
+                                        </div>
+
+
+                                        <div class="clearfix">
+                                            <pagination-controls previousLabel="" nextLabel=""
+                                                (pageChange)="pageChange($event)"></pagination-controls>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!--row end-->
+
+    <!--bar-chart-->
+    <div class="bar-chart">
+        <img src="assets/img/login-bar-chart.png" alt="Bar Chart">
+    </div>
+    <!--bar-chart-->
+</div>

@@ -1,0 +1,161 @@
+/* You can add global styles to this file, and also import other style files */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+@import 'ngx-toastr/toastr';
+
+body {
+    margin: 0;
+    /* font-family: 'Arial', sans-serif; */
+    color: #115740;
+  
+        font-family: 'Montserrat', sans-serif;
+ 
+}
+
+.wt{
+    color: #fff;
+}
+
+.sm-txt{
+  font-size: 12px;
+}
+
+h1 {
+ font-weight: 600;
+}
+
+h4{
+    font-size: 24px !important;
+    font-weight: 600 !important;
+}
+
+h5{
+    font-weight: 600 !important;
+}
+
+span{
+    font-size: 14px;
+}
+
+.btnn{
+    background: white;
+    color: #115740;
+    border: 1px solid #115740;
+    padding: 6px 20px;
+}
+
+.btnn1{
+    background: #115740;
+    color: #fff;
+    border: 1px solid #115740;
+    padding: 6px 20px;
+}
+
+.btnn:hover{
+    background: #115740;
+    color: #fff;
+   
+}
+
+.input-group-text{
+    background: #115740;
+    color: #fff;
+     border-radius: 0;
+}
+
+main{
+    width: 95%;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+/* table css  */
+.scroll{
+    overflow-x: auto;
+}
+
+table{
+    color: #115740 !important;
+
+   border: none !important;
+   outline: none !important;
+}
+
+th{
+    background: #C0D3CD !important;
+    border: none !important;
+   
+}
+
+td{
+    border: none !important;
+   
+}
+
+
+
+
+
+
+/* pagination */
+
+/* .pagination-div{
+    text-align: end;
+} */
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #115740 !important;
+    color: #fff;
+    cursor: default;
+}
+.pagination-div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pagination-div .clearfix {
+    margin-left: auto; /* Pushes the pagination controls to the right */
+  }
+
+section{
+    max-width: 870px;
+}
+
+
+
+
+.form-control{
+    background: #C0D3CD !important;
+    border-radius: 0;
+} 
+.form-select{
+    background-color: #C0D3CD !important;
+    border-radius: 0;
+}
+
+option{
+    border-radius: 0;
+}
+
+.form-select:focus{
+   border-color: #115740;
+    box-shadow: none;
+}
+
+.form-control:focus{
+    border-color: #115740;
+     box-shadow: none;
+ }
+
+
+
+ 

@@ -1,0 +1,108 @@
+<main class="mt-2">
+
+    <section>
+        <div class="flex">
+
+            <h5>Reports</h5>
+            <div class="flex">
+                <div>
+                    <select class="form-select" [(ngModel)]="report_name" (change)="navigate()">
+                        <option value="/admin/reports">point-history</option>
+                      <option value="/admin/reports/transaction-history">transaction-history</option>
+                      <option value="/admin/reports/game-report">game-report</option>
+                      <option value="/admin/reports/point-received">point-received</option>
+                      <option value="/admin/reports/point-rejected">point-rejected</option>
+                      <option value="/admin/reports/point-cancled">point-cancle</option>
+          
+                    </select>
+                  </div>
+                <div>
+                    <select name="" id="" class="form-select">
+                        <option value="">Select month</option>
+                    </select>
+                </div>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Enter Id">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll">
+            <table class="table mt-4">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No</th>
+                        
+                       
+                        <th scope="col">Sender</th>
+                        <th scope="col">Reciver </th> <th scope="col">Point</th>
+                        <th scope="col">Dated</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of tableRows | 
+                      paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords }
+                       ">
+                        <!-- {{ options |json }} -->
+                        <td> <input type="checkbox" value="{{item.id}}" [checked]="showChecked(item)"
+                                (click)="selectItem($event, item)"></td>
+                                <td>{{item.sender}}</td>
+
+                        <td>{{item.receiver}}</td>
+                        
+                        <td>{{item.point |number}}</td>
+                        <td>{{item.createdat |date}}</td>
+                         
+                    
+
+
+                        <!-- <td>
+          
+                        <a class="btn btn btn-primary me-2" href="/admin/users/manage/{{item.id}}">Edit</a>
+                        <button class="btn btn btn-danger" (click)="confirm(item.id)">Delete</button>
+          
+                      </td> -->
+                    </tr>
+                    <tr *ngIf="tableRows.length===0">
+                        <th> </th>
+                        <th></th>
+                        <th>Record Not Found</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+        </div>
+
+
+
+        <div class="pagination-div">
+
+            <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                Size: <select class="form-dropdown" name="nights" [ngModel]="options.size"
+                    (change)="pageSizeChange($event)" required>
+
+                    <option [value]="n" *ngFor="let n of pageArr index as i">{{n}}</option>
+                </select>
+                Showing
+                {{options.startIndex}} to
+                {{options.endIndex}} of {{options.totalRecords}}
+                entries
+            </div>
+
+
+            <div class="clearfix">
+                <pagination-controls previousLabel="" nextLabel=""
+                    (pageChange)="pageChange($event)"></pagination-controls>
+
+
+            </div>
+        </div>
+
+    </section>
+</main>

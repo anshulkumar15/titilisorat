@@ -1,0 +1,114 @@
+.logo{
+    padding: 5px 20px;
+}
+
+#sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    background-color: #115740;
+    padding-top: 20px;
+    color: #fff;
+    overflow-y: auto;
+
+}
+
+.items{
+    display: flex;
+    align-items: center;
+
+    .mt{
+        margin-top: 5px;
+    }
+}
+
+.icon{
+    width: auto !important;
+    margin-right: 10px;
+}
+
+/* #sidebar img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+} */
+
+#sidebar ul {
+    list-style: none;
+    padding: 5px;
+    margin: 20px 0;
+}
+
+#sidebar ul li {
+    padding: 15px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#sidebar ul li i{
+margin-right: 10px;
+}
+
+#sidebar ul li:last-child {
+    border-bottom: none;
+}
+
+
+
+#sidebar ul li:hover {
+    background-color: #558877;
+}
+
+.active{
+    background-color: #558877;
+}
+
+.bottomDiv {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.bottomDiv li:hover {
+  background-color: #115740 !important;
+}
+
+
+
+/* Style the scrollbar */
+#sidebar::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #115740; /* Set the color of the scrollbar thumb */
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background-color: #115740; /* Set the color of the scrollbar track */
+}
+
+@media screen and (max-width: 650px) {
+
+   
+    #sidebar {
+        width: 60px;
+        overflow: hidden;
+
+    }
+
+    ul li span{
+        display: none;
+    }
+
+    #sidebar ul li i{
+        margin-right: 0px;
+        }
+
+        #sidebar ul li {
+text-align: center;
+        }
+
+}

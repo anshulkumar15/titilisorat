@@ -1,0 +1,81 @@
+<div class="gridContainer">
+    <div id="div1">
+        <div class="welcome-details">
+            <p>Welcome</p>
+            <p>
+                <span>
+                    <span id="lblMemberName">{{authService.getEmail()}}</span>
+                </span>
+            </p>
+            <p>Your Current Balance is <strong><span id="lblCurrentBalance">{{authService.point}}</span></strong></p>
+            <p class="wel-msg"></p>
+        </div>
+     <div class="container">
+      <div class="error">
+       <div id="vldSummaryChangePin" class="error-msg" style="display:none;">
+  
+  </div>
+      </div>
+      <div class="tbl-container">
+       <table>
+        <tbody><tr>
+         <th class="headings" align="left">Change Your Pin</th>
+        </tr>
+       </tbody></table>
+       <div class="c-pass">
+       <table>
+        <tbody><tr>
+         <td class="subheadings">
+          <table>
+           <tbody><tr>
+            <td>Old Pin :</td>
+            <td>
+             <input name="txtOldPin" type="password" maxlength="16" id="txtOldPin">
+            </td>
+            <td>
+             <span id="reqOldPin" style="color:Red;visibility:hidden;">*</span>
+            </td>
+           </tr>
+           <tr>
+            <td>New Pin :</td>
+            <td>
+             <input name="txtNewPin" type="password" maxlength="16" id="txtNewPin">
+            </td>
+            <td>
+             <span id="reqNewPin" style="color:Red;visibility:hidden;">*</span>
+             <span id="regNewPin" style="color:Red;visibility:hidden;">*</span>
+            </td>
+           </tr>
+           <tr>
+            <td>Confirm New Pin :</td>
+            <td>
+             <input name="txtConfirmPin" type="password" maxlength="16" id="txtConfirmPin">
+            </td>
+            <td>
+             <span id="reqConfirmPin" style="color:Red;visibility:hidden;">*</span>
+             <span id="comConfirmPin" style="color:Red;visibility:hidden;">*</span>
+            </td>
+           </tr>
+           <tr>
+            <td>Your Password :</td>
+            <td>
+             <input name="txtPassword" type="password" maxlength="23" id="txtPassword">
+            </td>
+            <td>
+             <span id="reqPassword" style="color:Red;visibility:hidden;">*</span>
+            </td>
+           </tr>
+           <tr>
+            <td colspan="3">
+             <input type="submit" name="btnChangePin" value="Change"  id="btnChangePin">
+            </td>
+           </tr>
+          </tbody></table>
+         </td>
+        </tr>
+       </tbody></table>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>

@@ -1,0 +1,910 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+
+
+@charset "utf-8";
+@import 'ngx-toastr/toastr';
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+body {
+    background: url(./assets/img/body-bg.jpg);
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.231;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+input[type=submit],
+[type=button],.btnn1 {
+    background: #20B7C9;
+    border: 1px solid #CCCCCC;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type=text] , input[type=date]{
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+    font-size: 100%;
+   width: 180px;
+}
+
+img,
+object,
+embed,
+video {
+    max-width: 100%;
+}
+
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+    width: 100%;
+}
+
+
+
+/* Mobile Layout: 480px and below. */
+.top-bar {
+    float: left;
+    width: 100%;
+    height: 2px;
+    background: #737373;
+    /*border-top:5px solid #000000;*/
+    border-bottom: 2px solid #249FAB;
+    position: fixed;
+    z-index: 3;
+}
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87.36%;
+    padding-left: 1.82%;
+    padding-right: 1.82%;
+}
+
+#LayoutDiv1 {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+}
+
+.header {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 20px 0 10px 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+.login-button {
+    float: right;
+    width: auto;
+    height: auto;
+    margin: 34px 50px 0 0;
+    padding: 0;
+    position: relative;
+    display: block;
+    font-size: 36px;
+}
+
+.logo {
+    float: left;
+    width: 300px;
+    height: auto;
+    margin: 20px 0 0 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+.panel {
+    display: none;
+    float: left;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 3;
+    background: rgba(0, 0, 0, .4);
+    padding: 10px;
+}
+
+.panel a {
+    float: right;
+}
+
+.user-details {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    margin: 0 0 10px 0;
+    background: #fff;
+    padding: 0 10px;
+    color: #20B7C9;
+    border-radius: 5px;
+    border: 2px solid #d1d1d1;
+    box-shadow: 0px 0px 14px #fff;
+    height: 35px;
+    line-height: 35px;
+}
+
+.user-details i {
+    margin: 10px 0 0 0;
+}
+
+.responsive_menu select {
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #ffffff;
+    // vertical-align: middle;
+    background-color: #20B7C9;
+    background-image: none;
+    border: none;
+}
+
+nav {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 20px 0 0 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+nav ul {
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+nav ul li {
+    margin: 0;
+    display: inline-block;
+    list-style: none;
+    // float: left;
+    text-align: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 18px;
+    float: left;
+}
+
+nav ul li a:hover {
+    background: #20b7c9;
+}
+
+.active {
+    background: #20b7c9;
+}
+
+.container {
+    float: left;
+    width: 96%;
+    height: auto;
+    margin: 30px 0 0 0;
+    padding: 20px 2%;
+    position: relative;
+    display: block;
+    min-height: 300px;
+    z-index: 1;
+    border-radius: 0 50px 0 0;
+    border: 1px solid #fff;
+    border-bottom: none;
+    background: rgba(255, 255, 255, 0.60);
+}
+
+.login-div {
+    float: left;
+    width: 96%;
+    height: auto;
+    margin: 50px 2% 0 2%;
+    padding: 0 0 10px 0;
+    position: relative;
+    display: block;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 0px 5px #999999;
+    z-index: 2;
+    background: rgba(0, 0, 0, .3);
+}
+
+.fields {
+    float: left;
+    width: 92%;
+    margin: 10px 4%;
+    padding: 0;
+    position: relative;
+    display: block;
+   background: #FFF;
+}
+
+.login-row-width {
+    width: 100%;
+}
+
+.login-submit {
+    width: 92%;
+    margin: 0 4%;
+}
+
+.login-row {
+    float: left;
+    height: 40px;
+    padding: 0;
+    position: relative;
+    display: block;
+    line-height: 40px;
+
+}
+
+.login-row h2 {
+    margin: 0;
+    background: #4fd3dd;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+
+.login-label {
+    float: left;
+    width: 12%;
+    height: auto;
+    margin: 2px 0 0 5%;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+.login-fields {
+    float: left;
+    width: 68%;
+    height: auto;
+    margin: 0 2% 0 0;
+    padding: 0;
+    position: relative;
+    display: block;
+
+}
+
+.login-row span {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    margin-top: -6px;
+}
+
+.imgLeftMargin {
+    margin-left: -7px;
+}
+
+.login-fields input[type=submit] {
+    float: right;
+}
+
+.login-fields input[type=text],
+input[type=password] {
+    width: 180px;
+    height: 35px;
+    border-radius: none;
+    border: none;
+    
+}
+
+.bar-chart {
+    position: absolute;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+    width: 120px;
+    z-index: 1;
+    opacity: .2;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+    line-height: 40px;
+    color: #FFF;
+    background: url(./assets/img/footer-shadow.png) bottom repeat-x #16b2c3;
+    border-radius: 0 0 20px 20px;
+    margin: 0 0 20px 0;
+    border: 1px solid #FFFFFF;
+    border-top: none;
+}
+
+.copyright {
+    float: left;
+    width: 46%;
+    height: auto;
+    margin: 0;
+    padding: 0 2%;
+    position: relative;
+    display: block;
+}
+
+/*-> inner page css*/
+.row {
+    width: 100%;
+    float: left;
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
+    position: relative;
+    display: block;
+    z-index: 2;
+}
+
+.row-left {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+.row-mid {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+.row-right {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+.row-right.show-details-button {
+    width: 10%;
+}
+
+.text-center {
+    text-align: center;
+    line-height: 30px;
+}
+
+.arrow-first {
+    float: left;
+    width: 5%;
+}
+
+.arrow-prev {
+    float: left;
+    width: 5%;
+}
+
+.pager {
+    float: left;
+    width: 80%;
+}
+
+.pager a {
+    padding: 0 5px;
+}
+
+.pager input[type=text] {
+    width: 30px;
+    height: 26px;
+}
+
+.pager select {
+    float: right;
+}
+
+.arrow-next {
+    float: right;
+    width: 5%;
+}
+
+.arrow-last {
+    float: right;
+    width: 5%;
+}
+
+/*inner page css <-*/
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+    .gridContainer {
+        width: 90.675%;
+        padding-left: 1.1625%;
+        padding-right: 1.1625%;
+    }
+
+    #LayoutDiv1 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    .header {
+        float: left;
+    }
+
+    nav {
+        float: left;
+        width: 100%;
+        height: auto;
+        margin: 20px 0 10px 0;
+        padding: 0;
+        position: relative;
+        display: block;
+    }
+
+    nav ul {
+        float: left;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        display: block;
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        float: left;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background: #20b7c9;
+    }
+
+    .active {
+        background: #20b7c9;
+    }
+
+    nav ul li a:hover.selected {
+        background: #20b7c9;
+    }
+
+    /* -> submenu*/
+    nav ul li ul {
+        display: none;
+        margin: 37px 0 0 0;
+    }
+
+    nav ul li:hover ul {
+        display: block;
+        position: absolute;
+        background: #20B7C9;
+        z-index: 2;
+        width: 150px;
+    }
+
+    nav ul li:hover ul li {
+        display: table;
+        border-bottom: 1px solid #10a7b8;
+        width: 100%;
+    }
+
+    nav ul li:hover ul li a {
+        padding: 10px 10%;
+        float: left;
+        width: 80%;
+    }
+
+    nav ul li:hover ul li a:hover {
+        background: #FFF;
+        color: #10a7b8;
+    }
+
+    /*submenu <-*/
+    .container {
+        float: left;
+        width: 96%;
+        height: auto;
+        margin: 0;
+        padding: 20px 2%;
+        position: relative;
+        display: block;
+        min-height: 450px;
+        z-index: 1;
+
+    }
+
+    .login-div {
+        float: left;
+        width: 46%;
+        height: auto;
+        margin: 50px 25% 0 25%;
+        position: relative;
+        display: block;
+        /*border:1px solid #FFFFFF;*/
+        box-shadow: 0px 0px 5px #999999;
+        z-index: 2;
+    }
+
+    .login-row {
+        float: left;
+        height: 40px;
+        padding: 0;
+        position: relative;
+        display: block;
+        line-height: 40px;
+    }
+
+    .login-row h2 {
+        margin: 0;
+    }
+
+    .login-label {
+        width: 12%;
+    }
+
+    .login-fields {
+        width: 72%;
+    }
+
+    .login-fields input[type=text],
+    input[type=password] {
+        width: 96%;
+        height: 35px;
+    }
+
+    .bar-chart {
+        right: 20px;
+        bottom: 20px;
+        width: 370px;
+    }
+
+    .copyright {
+        width: 46%;
+        padding: 0 2%
+    }
+
+    /*-> inner page css*/
+    .row {
+        width: 100%;
+    }
+
+    .row-left {
+        width: 33%;
+    }
+
+    .row-mid {
+        width: 33%;
+    }
+
+    .row-right {
+        width: 33%;
+    }
+
+    /*inner page css <-*/
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+    .gridContainer {
+        width: 78%;
+        max-width: 1232px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;
+        margin: auto;
+    }
+
+    #LayoutDiv1 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    .header {
+        float: left;
+    }
+
+    nav {
+        float: right;
+        width: auto;
+        height: auto;
+        margin: 54px 10px 0;
+        padding: 0;
+        position: relative;
+        display: block;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        list-style: none;
+        float: none;
+        display: inline-block;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        background: #20b7c9;
+    }
+
+    nav ul li a.active {
+        background: #20b7c9;
+    }
+
+    /* -> submenu*/
+    nav ul li ul {
+        display: none;
+        margin: 37px 0 0 0;
+    }
+
+    nav ul li:hover ul {
+        display: block;
+        position: absolute;
+        background: #20B7C9;
+        z-index: 2;
+    }
+
+    .new-opt {
+        background: #0ea1b2;
+        border-bottom: 1px solid #028897 !important;
+    }
+
+    .new-opt a:hover {
+        background: #cefaff !important;
+    }
+
+    nav ul li:hover ul li {
+        display: table;
+        border-bottom: 1px solid #10a7b8;
+    }
+
+    nav ul li:hover ul li a:hover {
+        background: #FFF;
+        color: #10a7b8;
+    }
+
+    /*submenu <-*/
+    .container {
+        float: left;
+        width: 96%;
+        height: auto;
+        margin: 0;
+        padding: 20px 2%;
+        position: relative;
+        display: block;
+        min-height: 350px;
+    }
+
+    .login-div {
+        float: left;
+        width: 36%;
+        height: auto;
+        margin: 29px 0 0 12%;
+        position: relative;
+        display: block;
+        /*border:1px solid #FFFFFF;*/
+        box-shadow: 0px 0px 5px #999999;
+        z-index: 2;
+    }
+
+    .login-row {
+        float: left;
+        height: 40px;
+        padding: 0;
+        position: relative;
+        display: block;
+        line-height: 40px;
+    }
+
+    .login-row h2 {
+        margin: 0;
+    }
+
+    .login-label {
+        width: 12%;
+    }
+
+    .login-fields {
+        width: 66%;
+    }
+
+    .login-fields input[type=text],
+    input[type=password] {
+        width: 90%;
+        height: 35px;
+    }
+
+    .bar-chart {
+        right: 20px;
+        bottom: 20px;
+        width: 340px;
+    }
+
+    .copyright {
+        width: 96%;
+        padding: 0 2%;
+    }
+
+    /*-> inner page css*/
+    .row {
+        width: 100%;
+    }
+
+    .row-left {
+        width: 30%;
+        margin: 0;
+    }
+
+    .row-mid {
+        width: 30%;
+        margin: 0;
+    }
+
+    .row-right {
+        width: 30%;
+        margin: 0;
+    }
+
+    /*inner page css <-*/
+}
+
+.captchaText {
+    width: 59% !important;
+}
+
+.remainLoan {
+    float: right;
+    margin-top: -35px;
+    color: red;
+    padding-right: 10px;
+}
+
+
+//table style 
+.grid
+{
+    margin-top:20px;
+    width:100;
+    height:400px;
+    overflow:auto;
+}
+
+.grid table:first-child
+{
+	width:100%;
+	border:1px solid #fff;
+	border-collapse:collapse;
+}
+
+.grid table:last-child
+{
+	width:100%;
+	border:1px solid #fff;
+	border-collapse:collapse;
+}
+
+.grid table:last-child tr
+{
+	height:40px;
+	text-align:center;
+}
+
+.grid table:last-child tr td a
+{
+    color:Black;	
+}
+
+.grid table:last-child tr td
+{
+    color:Black;	
+}
+
+.grid table:last-child tr td
+{
+	vertical-align:middle;
+}
+
+.grid table:first-child tr
+{
+	background:#FFF;
+}
+
+.grid table:first-child tr:nth-child(odd)
+{ 
+		background: #E0F4F6;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+// .grid table:first-child tr:nth-child(even)
+// {
+	
+// }
+
+.grid table:first-child th
+{
+	background:#20B7C9;
+	border:1px solid #fff;
+	padding:5px;
+	word-break: break-all;
+}
+
+.grid table:first-child td
+{
+	border:1px solid #fff;
+	padding:5px;
+	color:#666;
+	word-break: break-all;
+}
+
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #115740 !important;
+    color: #fff;
+    cursor: default;
+}
+.pagination-div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pagination-div .clearfix {
+    margin-left: auto; /* Pushes the pagination controls to the right */
+  }
+  #dvRevenue > div > div.clearfix > pagination-controls > pagination-template > nav {
+    margin:0px
+  }
+  .red-text {
+    color:red;
+  }
+  .green-text{
+    color:greenyellow;
+  }

@@ -1,0 +1,130 @@
+<main>
+   
+    <div class="flex">
+        
+    <div class="box">
+        <div class="icon-div">
+          <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+          <img src="assets/admin/home/user.png" alt="">
+        </div>
+          <div>
+              Total users 
+              <h1>{{dashData?.userTotal}}</h1>
+          </div>
+      </div>
+    <div class="box">
+  <div class="icon-div">
+    <img src="assets/admin/home/live.png" alt="">
+  </div>
+  <div>
+    Live Users
+    <h1>{{ livePlayers.length }}</h1> <!-- 👈 count of unique live users -->
+  </div>
+</div>
+
+        <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/banned.png" alt="">
+          </div>
+            <div>
+             Banned users
+                <h1>{{dashData?.bannedUsers}}</h1>
+            </div>
+        </div>
+        <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/point.png" alt="">
+          </div>
+            <div>
+              Total points
+                <h1>{{dashData?.pointTotal}}</h1>
+            </div>
+        </div>
+        <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/bet.png" alt="">
+          </div>
+            <div>
+             Wallet (Main)
+                <h1>{{dashData?.walletMain}}</h1>
+            </div>
+        </div>
+        <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/win.png" alt="">
+          </div>
+            <div>
+              Wallet (Player)
+                <h1>{{dashData?.walletPlayer}}</h1>
+            </div>
+        </div>
+         <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/win.png" alt="">
+          </div>
+            <div>
+            Profit/Loss
+                <h1>{{dashData?.profitLoss}}</h1>
+            </div>
+        </div>
+         <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/win.png" alt="">
+          </div>
+            <div>
+             Total bet
+                <h1>{{dashData?.betTotal}}</h1>
+            </div>
+        </div>
+         <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/win.png" alt="">
+          </div>
+            <div>
+              Total winning
+                <h1>{{dashData?.winTotal}}</h1>
+            </div>
+        </div>
+
+
+         <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/win.png" alt="">
+          </div>
+            <div>
+               Today  win/loss
+                <h1>{{dashData?.dailyProfitLoss}}</h1>
+            </div>
+        </div>
+           <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/win.png" alt="">
+          </div>
+            <div>
+               Today  total bet
+                <h1>{{dashData?.dailyBetTotal}}</h1>
+            </div>
+        </div>
+
+                <div class="box">
+          <div class="icon-div">
+            <!-- <i class="fa fa-user user-icon" aria-hidden="true"></i> -->
+            <img src="assets/admin/home/win.png" alt="">
+          </div>
+            <div>
+               Today  winning
+                <h1>{{dashData?.dailyWinTotal}}</h1>
+            </div>
+        </div>
+    </div>
+
+</main>

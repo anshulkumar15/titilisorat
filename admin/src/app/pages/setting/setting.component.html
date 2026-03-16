@@ -1,0 +1,80 @@
+<main class="mt-2">
+  <section>
+    <div class="flex">
+
+      <!-- Password Reset Form -->
+      <form #passwordForm="ngForm">
+        <div class="loginBox">
+          <h3>Reset Password</h3>
+
+          <div class="my-3">
+            <div class="my-2">
+              Old Password
+              <input required minlength="4" maxlength="25" [(ngModel)]="user.old_password"
+                name="old_password" type="password" autocomplete="off" class="form-control form" placeholder="">
+            </div>
+
+            <div class="my-2">
+              New Password
+              <input required minlength="4" [(ngModel)]="user.new_password"
+                name="new_password" type="password" autocomplete="off" class="form-control form" placeholder="">
+            </div>
+
+            <div class="my-2">
+              Retype Password
+              <input required minlength="4" maxlength="25" [(ngModel)]="user.con_password"
+                name="con_password" type="password" autocomplete="off" class="form-control form" placeholder="">
+            </div>
+          </div>
+
+          <button type="submit" class="btnn my-2 text-center" [disabled]="passwordForm.form.invalid"
+            (click)="onPasswordSubmit(passwordForm)">
+            Reset Password
+          </button>
+        </div>
+      </form>
+
+      <!-- Contact Info Update Form -->
+      <form #contactForm="ngForm" class="mt-5">
+        <div class="loginBox">
+          <h3>Update Admin Contact Details</h3>
+
+          <div class="my-3">
+            <div class="my-2">
+              Phone
+              <input [(ngModel)]="user.phone" name="phone" type="number" autocomplete="off"
+                class="form-control form" placeholder="Enter phone">
+            </div>
+
+            <!-- <div class="my-2">
+              UPI
+              <input [(ngModel)]="user.upi" name="upi" type="text" autocomplete="off"
+                class="form-control form" placeholder="Enter UPI">
+            </div> -->
+
+
+
+            <div class="my-2">
+              QR Code
+              <input type="file" name="qrCode" (change)="onFileChange($event)"
+                class="form-control form" accept="image/*">
+            </div>
+
+        
+
+            <div class="my-2" *ngIf="qrCodeUrl">
+              <label>Uploaded QR Code:</label><br>
+              <img [src]="qrCodeUrl" alt="QR Code" style="max-width: 200px; border: 1px solid #ccc; padding: 5px;">
+            </div>
+          </div>
+
+          <button type="submit" class="btnn my-2 text-center"
+            (click)="onContactUpdate(contactForm)">
+            Update Contact Details
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+</main>

@@ -1,0 +1,188 @@
+<div class="container">
+    <h2>Fun Roullet</h2>
+    <span class="remainLoan"></span>
+    <!--row-->
+    <div class="row">
+        <div>
+           
+
+            <form action="/Reports.mvc" method="post">
+                <table style="width:100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="row-left">
+                                    <label for="strFromDate">From Date : </label>
+                                    <span class="DatePicker_Icon_Wrapper"
+                                        style="display: inline-block; position: relative; float: none; inset: auto;">
+                                        <input name="s_date" type="date" [(ngModel)]="options.s_date">
+                                    </span>
+                                </div>
+                                <div class="row-mid">
+                                    <label for="strToDate">To Date : </label>
+
+                                    <span class="DatePicker_Icon_Wrapper"
+                                        style="display: inline-block; position: relative; float: none; inset: auto;">
+                                        <input name="e_date"  type="date" [(ngModel)]="options.e_date">
+                                       
+                                    </span>
+                                </div>
+                                
+                                
+                                    <!-- <div class="row-mid">
+                                        <label for="MemberID">Member ID </label> 
+                                        <input name="search" class="search-input" #searchBox id="search-box" placeholder="" [(ngModel)]="options.search" (input)="search(searchBox.value)" />
+                                        <select name="type" id="" [(ngModel)]="options.type"  class="form-select">
+                                            <option value="send">Send</option>
+                                            <option value="receive">receive</option>
+                                        </select>
+                                    </div> -->
+                                <div class="row-right show-details-button">
+                                    <input type="button" name="btnShowDetails" id="btnShowDetails" value="Show Details" (click)="getTotalRec()">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="grid" id="dvRevenue">
+                                    <table style="width:100%;">
+                                        <thead>
+                                            <tr >
+                                                <th >Sr. No.</th>
+                                                <th  >Round </th>
+                                                <th  >WinNo </th>
+                                                <th >Time</th>
+                                               
+                                             
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of tableRows | 
+                                              paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+                                              index as i;">
+                                                <!-- {{ options |json }} -->
+                                                <td> {{i+1}} </td>
+                         
+                                                <td>{{item.RoundCount}}</td>
+                                                
+                                                <td>{{item.Win_singleNo |number}}</td>
+                                                <td>{{item.Date }}</td>
+                                                 
+                                            
+                        
+                        
+                                                <!-- <td>
+                                  
+                                                <a class="btn btn btn-primary me-2" href="/admin/users/manage/{{item.id}}">Edit</a>
+                                                <button class="btn btn btn-danger" (click)="confirm(item.id)">Delete</button>
+                                  
+                                              </td> -->
+                                            </tr>
+                                            <tr *ngIf="tableRows.length===0">
+                                                <th> </th>
+                                                <th></th>
+                                                <th>Record Not Found</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                        
+                                        </tbody>
+                                        <tfoot>
+                                            <tr *ngFor="let item of totalRows 
+                                            
+                                            index as i;">
+                                             
+                                                <td>Total</td>
+                                                <td>{{ options.s_date}}</td>
+                                                <td>{{ options.e_date}}</td>
+                                                <td>{{item.profit}}</td>
+                                                <td></td>
+                                               
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <div class="pagination-div">
+
+                                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                                            Size: <select class="form-dropdown" name="nights" [ngModel]="options.size"
+                                                (change)="pageSizeChange($event)" required>
+                            
+                                                <option [value]="n" *ngFor="let n of pageArr index as i">{{n}}</option>
+                                            </select>
+                                            Showing
+                                            {{options.startIndex}} to
+                                            {{options.endIndex}} of {{options.totalRecords}}
+                                            entries
+                                        </div>
+                            
+                            
+                                        <div class="clearfix">
+                                            <pagination-controls previousLabel="" nextLabel=""
+                                                (pageChange)="pageChange($event)"></pagination-controls>
+                            
+                            
+                                        </div>
+                                    </div>
+                                    <!-- <table style="width:100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td><i class="fa-backward fa-lg" style="cursor:pointer;" alt="Page 1"
+                                                        pageval="1"></i></td>
+                                                <td><i class="fa-caret-left fa-lg" style="cursor:pointer;"
+                                                        alt="Previous" pageval="-1"></i></td>
+                                                <td><a href="javascript://" alt="Page 1">1</a></td>
+                                                <td><a href="javascript://" alt="Page 2">2</a></td>
+                                                <td><a href="javascript://" alt="Page 3">3</a></td>
+                                                <td><a href="javascript://" alt="Page 4">4</a></td>
+                                                <td><a href="javascript://" alt="Page 5">5</a></td>
+                                                <td><a href="javascript://" alt="Page 6">6</a></td>
+                                                <td><a href="javascript://" alt="Page 7">7</a></td>
+                                                <td><a href="javascript://" alt="Page 8">8</a></td>
+                                                <td><a href="javascript://" alt="Page 9">9</a></td>
+                                                <td><a href="javascript://" alt="Page 10">10</a></td>
+                                                <td><input id="dvRevenuetxtJqGridGoToPage" type="text" value="1"
+                                                        style="width:30px;text-align:right;"> / 14 <input type="button"
+                                                        value="Go"></td>
+                                                <td><select>
+                                                        <option value="10">10 Records</option>
+                                                        <option value="20">20 Records</option>
+                                                        <option value="30">30 Records</option>
+                                                        <option value="40">40 Records</option>
+                                                        <option value="50">50 Records</option>
+                                                        <option value="60">60 Records</option>
+                                                        <option value="70">70 Records</option>
+                                                        <option value="80">80 Records</option>
+                                                        <option value="90">90 Records</option>
+                                                        <option value="100">100 Records</option>
+                                                    </select></td>
+                                                <td><i class="fa-caret-right fa-lg" style="cursor:pointer;" alt="Next"
+                                                        pageval="+1"></i></td>
+                                                <td><i class="fa-forward fa-lg" style="cursor:pointer;" alt="Last Page"
+                                                        pageval="14"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table> -->
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </form>
+
+        </div>
+    </div>
+
+    <!--row end-->
+
+    <!--bar-chart-->
+    <div class="bar-chart">
+        <img src="assets/img/login-bar-chart.png" alt="Bar Chart">
+    </div>
+    <!--bar-chart-->
+</div>

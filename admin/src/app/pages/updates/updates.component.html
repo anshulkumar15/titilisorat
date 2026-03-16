@@ -1,0 +1,27 @@
+
+<main class="mt-2">
+  
+    <section>
+
+             
+<h5>Version control </h5>
+
+<form #formData="ngForm"  >
+
+<div class="mt-2">
+    <span>Version</span>
+     <input required minlength="2"   [(ngModel)]="user.versionControle" type="text" maxlength="25" autocomplete="off"   name="versionControle"  class="form-control form" placeholder="">
+
+</div>
+
+<div class="mt-2">
+    <span>Apk source</span>
+    <input required minlength="2"   [(ngModel)]="user.appLink" type="test" maxlength="25" autocomplete="off"  name="appLink"  class="form-control form" placeholder="">
+
+</div>
+
+ <button type="submit"   class="btnn1 mt-4" [disabled]="formData.form.invalid" (click)="onSubmit(formData)" >Release </button>
+
+</form>
+</section>
+</main>

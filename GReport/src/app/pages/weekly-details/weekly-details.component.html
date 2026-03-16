@@ -1,0 +1,333 @@
+<!-- weekly-details.component.html -->
+<div class="container">
+    <h2>Weekly Details Report</h2>
+    
+    <!-- Search Section -->
+    <div class="search-section">
+        <form action="/Reports.mvc" method="post">
+            <div class="search-row">
+                <div class="form-group">
+                    <label for="strFromDate">From Date :</label>
+                    <input name="s_date" type="date" [(ngModel)]="options.s_date">
+                </div>
+                
+                <div class="form-group">
+                    <label for="strToDate">To Date :</label>
+                    <input name="e_date" type="date" [(ngModel)]="options.e_date">
+                </div>
+                
+                <div class="form-group" *ngIf="auth.getRole() != 5">
+                    <label for="MemberID">Member ID</label>
+                    <input name="search" class="search-input" #searchBox 
+                           placeholder="Enter Member ID" [(ngModel)]="options.search" 
+                           (input)="search(searchBox.value)" />
+                </div>
+                
+                <div class="form-group">
+                    <button type="button" class="search-btn" (click)="loadAllReports()">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Accordion Section -->
+    <div class="accordion-container">
+        
+        <!-- Point Transferred -->
+    <div class="accordion-item">
+      <div class="accordion-header" 
+           [class.active]="activeAccordion === 'send'" 
+           (click)="toggleAccordion('send')">
+        <span class="accordion-title">Point Transferred</span>
+        <span class="accordion-icon" [class.active]="activeAccordion === 'send'">▼</span>
+      </div>
+      <div class="accordion-content" [class.active]="activeAccordion === 'send'">
+        <div class="content-inner" *ngIf="activeAccordion === 'send'">
+          <table class="data-table" *ngIf="tableRows.length > 0">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Transfer To</th>
+                <th>Amount</th>
+                <th>Transfer Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tableRows | 
+                          paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+                          index as i;">
+                <td>{{options.startIndex + i}}</td>
+                <td>{{item.account}}</td>
+                <td>{{item.point | number}}</td>
+                <td>{{item.Date | date:'medium'}}</td>
+              </tr>
+            </tbody>
+            <tfoot *ngIf="totalRows.length > 0">
+              <tr *ngFor="let item of totalRows">
+                <td></td>
+                <td><strong>Total :</strong></td>
+                <td><strong>{{item.total}}</strong></td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <div *ngIf="tableRows.length === 0" class="no-data">No records found</div>
+
+          <div class="pagination-section" *ngIf="tableRows.length > 0">
+            <label class="blackCo" for="pageSize">Records per page: </label>
+            <select id="pageSize" (change)="pageSizeChange($event)">
+              <option  *ngFor="let size of pageArr" [value]="size" [selected]="options.size === size">{{size}}</option>
+            </select>
+
+            <pagination-controls 
+                (pageChange)="pageChange($event)"
+                [autoHide]="true"
+                previousLabel="Prev"
+                nextLabel="Next">
+            </pagination-controls>
+
+            <span class="page-info blackCo">
+              Showing {{options.startIndex}} - {{options.endIndex}} of {{options.totalRecords}} records
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Points Received -->
+       <div class="accordion-item">
+      <div class="accordion-header" 
+           [class.active]="activeAccordion === 'receive'" 
+           (click)="toggleAccordion('receive')">
+        <span class="accordion-title">Points Received</span>
+        <span class="accordion-icon" [class.active]="activeAccordion === 'receive'">▼</span>
+      </div>
+      <div class="accordion-content" [class.active]="activeAccordion === 'receive'">
+        <div class="content-inner" *ngIf="activeAccordion === 'receive'">
+          <table class="data-table" *ngIf="tableRows.length > 0">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Received From</th>
+                <th>Amount</th>
+                <th>Transfer Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tableRows | 
+                          paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+                          index as i;">
+                <td>{{options.startIndex + i}}</td>
+                <td>{{item.account}}</td>
+                <td>{{item.point | number}}</td>
+                <td>{{item.Date | date:'medium'}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div *ngIf="tableRows.length === 0" class="no-data">No records found</div>
+
+          <div class="pagination-section" *ngIf="tableRows.length > 0">
+            <label class="blackCo" for="pageSize">Records per page: </label>
+            <select id="pageSize" (change)="pageSizeChange($event)">
+              <option *ngFor="let size of pageArr" [value]="size" [selected]="options.size === size">{{size}}</option>
+            </select>
+
+            <pagination-controls 
+                (pageChange)="pageChange($event)"
+                [autoHide]="true"
+                previousLabel="Prev"
+                nextLabel="Next">
+            </pagination-controls>
+
+            <span class="page-info blackCo">
+              Showing {{options.startIndex}} - {{options.endIndex}} of {{options.totalRecords}} records
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Points Transferred But yet to be Received -->
+      <div class="accordion-item">
+      <div class="accordion-header" 
+           [class.active]="activeAccordion === 'pending'" 
+           (click)="toggleAccordion('pending')">
+        <span class="accordion-title">Points Transferred But yet to be Received</span>
+        <span class="accordion-icon" [class.active]="activeAccordion === 'pending'">▼</span>
+      </div>
+      <div class="accordion-content" [class.active]="activeAccordion === 'pending'">
+        <div class="content-inner" *ngIf="activeAccordion === 'pending'">
+          <table class="data-table" *ngIf="tableRows.length > 0">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Transfer To</th>
+                <th>Amount</th>
+                <th>Transfer Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tableRows | 
+                          paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+                          index as i;">
+                <td>{{options.startIndex + i}}</td>
+                <td>{{item.account}}</td>
+                <td>{{item.point | number}}</td>
+                <td>{{item.Date | date:'medium'}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div *ngIf="tableRows.length === 0" class="no-data">No records found</div>
+
+          <div class="pagination-section" *ngIf="tableRows.length > 0">
+            <label class="blackCo" for="pageSize">Records per page: </label>
+            <select id="pageSize" (change)="pageSizeChange($event)">
+              <option *ngFor="let size of pageArr" [value]="size" [selected]="options.size === size">{{size}}</option>
+            </select>
+
+            <pagination-controls 
+                (pageChange)="pageChange($event)"
+                [autoHide]="true"
+                previousLabel="Prev"
+                nextLabel="Next">
+            </pagination-controls>
+
+            <span class="page-info blackCo">
+              Showing {{options.startIndex}} - {{options.endIndex}} of {{options.totalRecords}} records
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Points yet to be Received -->
+        <!-- <div class="accordion-item">
+            <div class="accordion-header" 
+                 [class.active]="activeAccordion === 'accept'" 
+                 (click)="toggleAccordion('accept')">
+                <span class="accordion-title">Points yet to be Received</span>
+                <span class="accordion-icon" [class.active]="activeAccordion === 'accept'">▼</span>
+            </div>
+            <div class="accordion-content" [class.active]="activeAccordion === 'accept'">
+                <div class="content-inner" *ngIf="activeAccordion === 'accept'">
+                    <table class="data-table" *ngIf="tableRows.length > 0">
+                        <thead>
+                            <tr>
+                                <th>Sr.no</th>
+                                <th>Received From</th>
+                                <th>Amount</th>
+                                <th>Transfer Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of tableRows | 
+                                paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+                                index as i;">
+                                <td>{{i+1}}</td>
+                                <td>{{item.account}}</td>
+                                <td>{{item.point | number}}</td>
+                                <td>{{item.Date | date:'medium'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div *ngIf="tableRows.length === 0" class="no-data">
+                        No records found
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Point Reject -->
+        <div class="accordion-item">
+            <div class="accordion-header" 
+                 [class.active]="activeAccordion === 'reject'" 
+                 (click)="toggleAccordion('reject')">
+                <span class="accordion-title">Point Reject</span>
+                <span class="accordion-icon" [class.active]="activeAccordion === 'reject'">▼</span>
+            </div>
+            <div class="accordion-content" [class.active]="activeAccordion === 'reject'">
+                <div class="content-inner" *ngIf="activeAccordion === 'reject'">
+                    <!-- Content for rejected points -->
+                    <div class="no-data">No rejected points found</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Point Cancel -->
+        <div class="accordion-item">
+            <div class="accordion-header" 
+                 [class.active]="activeAccordion === 'cancel'" 
+                 (click)="toggleAccordion('cancel')">
+                <span class="accordion-title">Point Cancel</span>
+                <span class="accordion-icon" [class.active]="activeAccordion === 'cancel'">▼</span>
+            </div>
+            <div class="accordion-content" [class.active]="activeAccordion === 'cancel'">
+                <div class="content-inner" *ngIf="activeAccordion === 'cancel'">
+                    <!-- Content for cancelled points -->
+                    <div class="no-data">No cancelled points found</div>
+                </div>
+            </div>
+        </div>
+  <!-- Gaming Report -->
+    <div class="accordion-item">
+      <div class="accordion-header" 
+           [class.active]="activeAccordion === 'gaming'" 
+           (click)="toggleAccordion('gaming'); loadGamingReport()">
+        <span class="accordion-title">Gaming Report</span>
+        <span class="accordion-icon" [class.active]="activeAccordion === 'gaming'">▼</span>
+      </div>
+      <div class="accordion-content" [class.active]="activeAccordion === 'gaming'">
+        <div class="content-inner" *ngIf="activeAccordion === 'gaming'">
+          <table class="data-table" *ngIf="gamingReport.length > 0">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Child Email</th>
+                <th>Total Profit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of gamingReport | 
+                          paginate: { itemsPerPage: options.size, currentPage: options.page, totalItems: options.totalRecords };
+                          index as i;">
+                <td>{{options.startIndex + i}}</td>
+                <td>{{item.child}}</td>
+                <td [ngClass]="{'profit': item.profit >= 0, 'loss': item.profit < 0}">{{item.profit | number}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div *ngIf="gamingReport.length === 0" class="no-data">No gaming records found</div>
+
+          <div class="pagination-section" *ngIf="gamingReport.length > 0">
+            <label class="blackCo"  for="pageSize">Records per page: </label>
+            <select id="pageSize" (change)="pageSizeChange($event)">
+              <option *ngFor="let size of pageArr" [value]="size" [selected]="options.size === size">{{size}}</option>
+            </select>
+
+            <pagination-controls 
+                (pageChange)="pageChange($event)"
+                [autoHide]="true"
+                previousLabel="Prev"
+                nextLabel="Next">
+            </pagination-controls>
+
+            <span class="page-info blackCo">
+              Showing {{options.startIndex}} - {{options.endIndex}} of {{options.totalRecords}} records
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <!-- Revenue Report -->
+ <!-- Revenue Report --> <div class="accordion-item"> <div class="accordion-header" [class.active]="activeAccordion === 'revenue'" (click)="toggleAccordion('revenue')"> <span class="accordion-title">Revenue Report</span> <span class="accordion-icon" [class.active]="activeAccordion === 'revenue'">▼</span> </div> <div class="accordion-content" [class.active]="activeAccordion === 'revenue'"> <div class="content-inner" *ngIf="activeAccordion === 'revenue'"> <!-- Content for revenue report --> <div class="no-data">Revenue report data will be displayed here</div> </div> </div> </div>
+
+    </div>
+</div>

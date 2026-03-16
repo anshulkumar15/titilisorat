@@ -1,0 +1,112 @@
+<div class="gridContainer">
+
+    <div class="welcome-details">
+        <p>Welcome</p>
+        <p>
+            <span>
+                <span id="lblMemberName">{{authService.name??authService.email}}</span>
+            </span>
+        </p>
+        <p>Your Current Balance is <strong><span id="lblCurrentBalance">{{authService.point}}</span></strong></p>
+        <p class="wel-msg"></p>
+    </div>
+</div>
+
+<div class="gridContainer">
+
+    <div class="col">
+        <div class="heading-div">
+            <h1>Fun Roulette </h1>
+        </div>
+        <div class="table">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Sr No.</th>
+                        <th scope="col">Draw No.</th>
+                        <th scope="col">Draw Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of roulette; let index as i">
+                        <td scope="row">{{item.RoundCount}}</td>
+                        <td>{{item.Win_singleNo}}</td>
+                        <td>{{item.Date | date}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="heading-div">
+            <h1>Fun AndarBahar </h1>
+        </div>
+        <div class="table">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Sr No.</th>
+                        <th scope="col">Draw No.</th>
+                        <th scope="col">Draw Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of andar_bahar; let index as i">
+                        <td>{{item.RoundCount}}</td>
+                        <td>{{item.Win_singleNo}}</td>
+                        <td>{{item.Date | date}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col">
+        <div class="heading-div">
+            <h1>Fun Target </h1>
+        </div>
+        <div class="table">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Sr No.</th>
+                        <th scope="col">Draw No.</th>
+                        <th scope="col">Draw Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of target ; let index as i">
+                        <td>{{item.RoundCount}}</td>
+                        <td>{{item.Win_singleNo}}</td>
+                        <td>{{item.Date | date}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col">
+        <div class="heading-div">
+            <h1>Aviator</h1>
+        </div>
+        <div class="table">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Sr No.</th>
+                        <th scope="col">Draw No.</th>
+                        <th scope="col">Draw Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of aviator_list; let index as i">
+                        <td>{{item.RoundCount}}</td>
+                        <td>{{item.Win_singleNo || ''}}</td>
+                        <td>{{item.Date | date}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

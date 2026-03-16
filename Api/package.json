@@ -1,0 +1,34 @@
+{
+  "name": "khelojeeto",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.5.2",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "mongoose": "^5.13.21",
+    "mongoose-datatables": "^3.2.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^6.7.4",
+    "shortid": "^2.2.16",
+    "socket.io": "^2.5.0"
+  },
+  "scripts": {
+    "start": "DEBUG=test nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Jeeto Rummy",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

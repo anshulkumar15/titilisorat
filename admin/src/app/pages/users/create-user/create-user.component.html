@@ -1,0 +1,113 @@
+<main class="mt-2">
+  
+    <section>
+
+             
+<h5>Create user </h5>
+
+<!-- <div class="mt-2">
+    <span>Role</span>
+    
+        <select  class="form-select" name="role_id" [(ngModel)]="myForm.role_id" (ngModelChange)="roleChanged($event)">{{authService.getRole()}}
+            <option value="1" *ngIf="authService.getRole() === 0">MiniAdmin</option>
+            <option value="2">State</option>
+            <option value="3">City</option>
+            <option value="4">Main</option>
+            <option value="5">Player</option>
+          </select>
+     
+</div>
+<div  class="mt-2">
+    <span>Mini Id</span>
+    <select class="form-select" name="mini_id" [(ngModel)]="myForm.mini_id" (ngModelChange)="getStateOfAdmin($event)" required>
+        <option value="">Mini Id </option>
+  
+        <option [value]="item" *ngFor="let item of adminMini">{{item}}</option>
+      </select>
+  
+</div>
+
+<div class="mt-2">
+    <span>State Id</span>
+    <select name="state_id" [(ngModel)]="myForm.state_id" (ngModelChange)="getCitybyState($event)" required>
+        <option value="">Select State Id </option>
+        <option [value]="item" *ngFor="let item of state">{{item}}</option>
+  
+      </select>
+</div>
+
+<div class="mt-2">
+    <span>City Id </span>
+    <select name="city_id" [(ngModel)]="myForm.city_id" (ngModelChange)="getmainbycity($event)" required>
+        <option value="">Select City Id </option>
+        <option [value]="item" *ngFor="let item of city">{{item}}</option>
+  
+      </select>
+</div>
+
+ 
+
+ <button class="btnn1">Create</button> -->
+ <form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+    <div class="mt-2">
+        <span>Role</span>
+    <!-- <input type="text" name="name" [(ngModel)]="myForm.role_id" class="form-control" id="" placeholder="first name"> -->
+
+    <select  class="form-select" name="role_id" [(ngModel)]="myForm.role_id" (ngModelChange)="roleChanged($event)">{{authService.getRole()}}
+      <option value="1" *ngIf="authService.getRole() === 0">MiniAdmin</option>
+      <option value="2">State</option>
+      <option value="3">City</option>
+      <option value="4">Main</option>
+      <option value="5">Player</option>
+    </select>
+
+  </div>
+  <div class="mt-2" *ngIf="myForm.role_id >= 2">
+        <span>Mini Id </span> 
+    <select  class="form-select" name="mini_id" [(ngModel)]="myForm.mini_id" (ngModelChange)="getStateOfAdmin($event)" required>
+      <option value="">Select Mini Id </option>
+
+      <option [value]="item" *ngFor="let item of adminMini">{{item}}</option>
+    </select>
+
+
+
+  </div>
+
+  <div class="mt-2" *ngIf="myForm.role_id > 2">
+        <span>State Id</span>
+    <select  class="form-select" name="state_id" [(ngModel)]="myForm.state_id" (ngModelChange)="getCitybyState($event)" required>
+      <option value="">Select State Id </option>
+      <option [value]="item" *ngFor="let item of state">{{item}}</option>
+
+    </select>
+  </div>
+
+  <div class="mt-2" *ngIf="myForm.role_id > 3" >
+        <span>City Id</span>
+    <select  class="form-select" name="city_id" [(ngModel)]="myForm.city_id" (ngModelChange)="getmainbycity($event)" required>
+      <option value="">Select City Id </option>
+      <option [value]="item" *ngFor="let item of city">{{item}}</option>
+
+    </select>
+  </div>
+
+  <div class="mt-2" *ngIf="myForm.role_id > 4">
+        <span>Main Id</span> 
+    <select  class="form-select" name="main_id" [(ngModel)]="myForm.main_id" (ngModelChange)="getbymanager($event)" required>
+      <option value=""> Select Main Id</option>
+      <option [value]="item" *ngFor="let item of main">{{item}}</option>
+    </select>
+  </div>
+
+  <div class="mt-2">
+    <span>{{role[myForm.role_id]}}</span> 
+    <input  required minlength="10" maxlength="10" type="text" name="email" [(ngModel)]="myForm.email" class="form-control" id="" placeholder="">
+  </div>
+
+
+  <button type="submit" class="btnn1 mt-4" [disabled]="formData.invalid"> Create {{role[myForm.role_id]}} User</button>
+ 
+</form>
+</section>
+</main>

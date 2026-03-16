@@ -1,0 +1,49 @@
+/* custom-dialog.component.css */
+.custom-dialog {
+    width: 90%;
+    min-height: 80%;
+   border: 4px solid #20B7C9;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+z-index: 2;
+color: #333333;
+
+  }
+  
+  .dialog-header {
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    h2{
+      text-align: center;
+    }
+  }
+
+  .w-90{
+    width: 90%;
+  }
+  
+  .close-button {
+    cursor: pointer;
+  }
+  
+  .dialog-body {
+    padding: 10px;
+  }
+
+  span{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #515151;
+    text-align: left;
+    display: block;
+  }
+  

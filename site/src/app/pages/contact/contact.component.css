@@ -1,0 +1,78 @@
+.text
+{
+    margin-left: -80%;
+    margin-top: 3%;
+    border: 1px solid #333;
+    background: #D3D3D3;
+    color: #000;
+    text-align: left;
+    padding-left: 4% !important;
+    font-size:14px;
+}
+
+.tooltip
+{
+    float: right;
+    margin: -4% 7%;
+    position: absolute;
+    width: 15%;
+}
+
+td
+{
+ border:none !important;    
+}
+.contact
+{
+    float:none;
+    width:44%;
+    margin:10px auto 0;
+}
+.contact h3
+{
+    color:#008000;
+    margin:10px 0 10px 0;
+    float:left;
+    width:100%;
+}
+.error
+{
+    float:left;
+    width:100%;
+    font-weight:bold;
+    color:#ff0000;
+}
+.contact-tbl
+{
+    float:left;
+    width:100%;
+}
+.contact-tbl table
+{
+    width:100%;
+}
+.contact-tbl table th, .contact-tbl table td
+{
+    color: #666666;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-decoration: none;
+}
+.contact-tbl input[type=text], .contact-tbl input[type=email], .contact-tbl textarea, .contact-tbl input[type=submit]{
+    border: 1px solid #666666;
+    color: #666666;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.captcha img,.captcha input
+{
+    float:left;
+    margin: 0 10px 0 0;
+}

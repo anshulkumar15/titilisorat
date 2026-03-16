@@ -1,0 +1,57 @@
+
+
+ .icon-div{
+        text-align: center;
+    display: flex;
+    align-items: center;
+    }
+
+.user-icon {
+    font-size: 24px; 
+}
+
+.flex {
+    display: flex;
+    gap: 20px; 
+    flex-wrap: wrap; 
+    max-width: 870px; 
+}
+
+   
+.box{
+   
+    margin-top: 20px;
+    border: 1px solid #115740;
+    padding: 10px 15px;
+    width: calc(33.33% - 40px); 
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .flex {
+        display: flex;
+        gap: 20px; 
+        flex-wrap: wrap; 
+        max-width: 870px; 
+    }
+    
+    .box {
+        width: 40%; /* Full width for small screens */
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .box {
+        width: 90%; /* Full width for small screens */
+    }
+}
+
+
+
+
+
+
+

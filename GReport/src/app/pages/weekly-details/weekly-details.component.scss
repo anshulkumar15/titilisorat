@@ -1,0 +1,279 @@
+// weekly-details.component.scss
+
+.container {
+    
+
+
+  h2 {
+    color: #333;
+    // margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    // text-align: center;
+  }
+}
+
+// Search Section Styles
+.search-section {
+//   background: white;
+//   padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  .search-row {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+
+    label {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    input {
+    //   padding: 12px 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+      }
+    }
+  }
+
+  .search-btn {
+    background: #20B7C9;
+    color: white;
+    border: none;
+    // padding: 12px 25px;
+    border-radius: 8px;
+    // font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: fit-content;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+    }
+  }
+}
+
+// Accordion Styles
+.accordion-container {
+//   background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e9ecef;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.accordion-header {
+  display: flex;
+  color:#000;
+  background-color: #E0F4F6;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px;
+  cursor: pointer;
+//   background: white;
+  transition: all 0.3s ease;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    background: #f8f9fa;
+  }
+
+  &.active {
+    background: grey;
+    color: white;
+    
+    .accordion-icon {
+      color: white;
+    }
+  }
+
+  .accordion-title {
+    font-size: 1rem;
+    font-weight: 500;
+    flex-grow: 1;
+  }
+
+  .accordion-icon {
+    // font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: #666;
+
+    &.active {
+      transform: rotate(180deg);
+      color: white;
+    }
+  }
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f8f9fa;
+
+  &.active {
+    max-height: 100%; // Adjust based on your content
+  }
+}
+
+.content-inner {
+  padding: 0;
+}
+
+// Table Styles
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 0.9rem;
+  color: #000;
+
+  th {
+    background: grey;
+    color: white;
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+    color:#000
+  }
+
+  tr:nth-child(even) {
+    background: #f8f9fa;
+  }
+
+  tr:hover {
+    background: #e3f2fd;
+  }
+
+  tfoot {
+    background: #f1f3f4;
+    
+    td {
+      font-weight: 600;
+      border-top: 2px solid #4a90e2;
+    }
+  }
+}
+
+.no-data {
+//   padding: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  background: white;
+}
+
+.pagination-section {
+  background: white;
+  padding: 20px;
+  border-top: 1px solid #e9ecef;
+  
+  .pagination-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .dataTables_info {
+      color: #666;
+      font-size: 0.9rem;
+
+      .form-dropdown {
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+//   .container {
+//     padding: 15px;
+//     margin: 10px;
+//   }
+
+  .accordion-header {
+    padding: 15px 20px;
+    
+    .accordion-title {
+      font-size: 1rem;
+    }
+  }
+
+  .data-table {
+    font-size: 0.8rem;
+    
+    th, td {
+      padding: 8px 6px;
+    }
+  }
+
+  .search-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-table {
+    th, td {
+      padding: 6px 4px;
+      font-size: 0.7rem;
+    }
+  }
+  
+  .accordion-header {
+    padding: 12px 15px;
+    
+    .accordion-title {
+      font-size: 0.9rem;
+    }
+  }
+}
+.blackCo{
+  color: black;
+}
